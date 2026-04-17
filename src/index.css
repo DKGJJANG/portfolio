@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Noto+Sans+KR:wght@700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-display: "Anton", "Noto Sans KR", sans-serif;
+  --font-sans: "Inter", "Noto Sans KR", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  --color-brand-green: #004D2C;
+}
+
+@layer base {
+  body {
+    @apply font-sans antialiased;
+  }
+}
