@@ -914,20 +914,23 @@ const FileUploadZone = ({ label, onUpload, value }: { label: string; onUpload: (
     }
 
     if (!storage || !storage.app) {
-      alert('Firebase Storage가 설정되지 않았습니다.');
+      console.error("Storage not initialized. configValid:", isConfigValid);
+      alert('Firebase Storage가 설정되지 않았습니다. API Key와 Storage Bucket 설정을 확인해 주세요.');
       return;
     }
 
     setIsUploading(true);
     try {
+      console.log("Starting upload:", file.name);
       const fileName = `${Date.now()}_${file.name}`;
       const storageRef = ref(storage, `projects/${fileName}`);
       await uploadBytes(storageRef, file);
       const url = await getDownloadURL(storageRef);
+      console.log("Upload success:", url);
       onUpload(url);
-    } catch (error) {
+    } catch (error: any) {
       console.error("Upload failed:", error);
-      alert('이미지 업로드 중 오류가 발생했습니다.');
+      alert(`이미지 업로드 중 오류가 발생했습니다: ${error.message || '알 수 없는 오류'}`);
     } finally {
       setIsUploading(false);
     }
@@ -1104,7 +1107,7 @@ const ProjectFormModal = ({
           <FileUploadZone 
             label="썸네일 이미지" 
             value={formData.thumbnail}
-            onUpload={(url) => setFormData({...formData, thumbnail: url})} 
+            onUpload={(url) => setFormData(prev => ({...prev, thumbnail: url}))} 
           />
           
           <div className="space-y-4">
@@ -1118,7 +1121,11 @@ const ProjectFormModal = ({
                   <FileUploadZone 
                     label={`이미지 ${idx + 1}`} 
                     value={img.url}
-                    onUpload={(url) => updateImageField(idx, url)} 
+                    onUpload={(url) => {
+                      const newImages = [...formData.images];
+                      newImages[idx] = { ...newImages[idx], url };
+                      setFormData(prev => ({ ...prev, images: newImages }));
+                    }} 
                   />
                   <button 
                     type="button" 
