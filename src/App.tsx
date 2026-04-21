@@ -60,6 +60,19 @@ const CATEGORIES = [
 // --- Data ---
 const SAMPLE_PROJECTS: Project[] = [
   {
+    id: 'air-rail-investigation-entrance',
+    number: 'NEW',
+    title: '항공철도사고조사위원회 출입구',
+    subtitle: 'INTERIOR DESIGN / Entrance',
+    description: '항공철도사고조사위원회 청사 출입구의 상징성과 보안성을 고려한 현대적인 입구 인테리어 디자인 및 시공 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: '/images/411.jpg',
+    images: [
+      { url: '/images/412.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'seoul-hyeon-walking',
     number: 'NEW',
     title: '서울현병원 걷기대회',
