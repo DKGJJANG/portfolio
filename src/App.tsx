@@ -22,7 +22,8 @@ import {
   query, 
   orderBy,
   getDoc,
-  addDoc
+  addDoc,
+  updateDoc
 } from 'firebase/firestore';
 import { 
   ref, 
@@ -738,7 +739,13 @@ const MarqueeImages = ({ images, index }: { images: string[]; index: number }) =
   );
 };
 
-const ProjectItem: React.FC<{ project: Project; onClick: (project: Project) => void; isAdmin?: boolean; onDelete?: (id: string) => void }> = ({ project, onClick, isAdmin, onDelete }) => {
+const ProjectItem: React.FC<{ 
+  project: Project; 
+  onClick: (project: Project) => void; 
+  isAdmin?: boolean; 
+  onDelete?: (id: string) => void;
+  onEdit?: (project: Project) => void;
+}> = ({ project, onClick, isAdmin, onDelete, onEdit }) => {
   return (
     <motion.div
       className="group relative aspect-square overflow-hidden cursor-pointer bg-gray-100 rounded-sm"
@@ -758,14 +765,26 @@ const ProjectItem: React.FC<{ project: Project; onClick: (project: Project) => v
       />
 
       {/* Admin Quick Actions */}
-      {isAdmin && onDelete && (
+      {isAdmin && (
         <div className="absolute top-2 right-2 z-20 flex gap-2">
-          <button 
-            onClick={(e) => { e.stopPropagation(); onDelete(project.id); }}
-            className="p-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors"
-          >
-            <Trash2 size={14} />
-          </button>
+          {onEdit && (
+            <button 
+              onClick={(e) => { e.stopPropagation(); onEdit(project); }}
+              className="p-2 bg-brand-green text-white rounded-full hover:bg-brand-green/80 transition-colors"
+              title="Edit"
+            >
+              <Edit size={14} />
+            </button>
+          )}
+          {onDelete && (
+            <button 
+              onClick={(e) => { e.stopPropagation(); onDelete(project.id); }}
+              className="p-2 bg-red-500 text-white rounded-full hover:bg-red-600 transition-colors"
+              title="Delete"
+            >
+              <Trash2 size={14} />
+            </button>
+          )}
         </div>
       )}
 
@@ -970,7 +989,19 @@ const FileUploadZone = ({ label, onUpload, value }: { label: string; onUpload: (
   );
 };
 
-const AddProjectModal = ({ isOpen, onClose, onAdd }: { isOpen: boolean; onClose: () => void; onAdd: (project: any) => Promise<void> }) => {
+const ProjectFormModal = ({ 
+  isOpen, 
+  onClose, 
+  onAdd, 
+  onUpdate,
+  editingProject 
+}: { 
+  isOpen: boolean; 
+  onClose: () => void; 
+  onAdd: (project: any) => Promise<void>;
+  onUpdate: (id: string, project: any) => Promise<void>;
+  editingProject?: Project | null;
+}) => {
   const [formData, setFormData] = useState({
     title: '',
     subtitle: '',
@@ -981,22 +1012,40 @@ const AddProjectModal = ({ isOpen, onClose, onAdd }: { isOpen: boolean; onClose:
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  useEffect(() => {
+    if (editingProject) {
+      setFormData({
+        title: editingProject.title || '',
+        subtitle: editingProject.subtitle || '',
+        description: editingProject.description || '',
+        category: editingProject.category || CATEGORIES[0],
+        thumbnail: editingProject.thumbnail || '',
+        images: editingProject.images || []
+      });
+    } else {
+      setFormData({ title: '', subtitle: '', description: '', category: CATEGORIES[0], thumbnail: '', images: [] });
+    }
+  }, [editingProject, isOpen]);
+
   if (!isOpen) return null;
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
     try {
-      await onAdd({
-        ...formData,
-        number: '00', // Auto-generated or placeholder
-        createdAt: new Date().toISOString()
-      });
+      if (editingProject) {
+        await onUpdate(editingProject.id, formData);
+      } else {
+        await onAdd({
+          ...formData,
+          number: '00', // Auto-generated or placeholder
+          createdAt: new Date().toISOString()
+        });
+      }
       onClose();
-      setFormData({ title: '', subtitle: '', description: '', category: CATEGORIES[0], thumbnail: '', images: [] });
     } catch (error) {
-      console.error("Failed to add project:", error);
-      alert("프로젝트 추가 중 오류가 발생했습니다.");
+      console.error("Failed to save project:", error);
+      alert("프로젝트 저장 중 오류가 발생했습니다.");
     } finally {
       setIsSubmitting(false);
     }
@@ -1022,7 +1071,9 @@ const AddProjectModal = ({ isOpen, onClose, onAdd }: { isOpen: boolean; onClose:
         className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm p-8"
       >
         <div className="flex justify-between items-center mb-8 border-b pb-4">
-          <h2 className="text-2xl font-display font-bold">새 프로젝트 추가</h2>
+          <h2 className="text-2xl font-display font-bold">
+            {editingProject ? '프로젝트 수정' : '새 프로젝트 추가'}
+          </h2>
           <button onClick={onClose}><X size={24} /></button>
         </div>
         <form onSubmit={handleSubmit} className="space-y-6">
@@ -1084,7 +1135,7 @@ const AddProjectModal = ({ isOpen, onClose, onAdd }: { isOpen: boolean; onClose:
           <div className="flex gap-4 pt-6 mt-8 border-t">
             <button type="button" onClick={onClose} className="flex-1 py-4 border border-gray-200 font-bold uppercase tracking-widest text-[10px] hover:bg-gray-50">취소</button>
             <button disabled={isSubmitting} type="submit" className="flex-1 py-4 bg-brand-green text-white font-bold uppercase tracking-widest text-[10px] hover:opacity-90 disabled:opacity-50">
-              {isSubmitting ? '저장 중...' : '프로젝트 저장'}
+              {isSubmitting ? '저장 중...' : (editingProject ? '수정 사항 저장' : '프로젝트 저장')}
             </button>
           </div>
         </form>
@@ -1103,6 +1154,7 @@ export default function App() {
   const [dbProjects, setDbProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
+  const [editingProject, setEditingProject] = useState<Project | null>(null);
   const clickTimeout = useRef<NodeJS.Timeout | null>(null);
 
   // Hidden admin access: 7 clicks on DABIN GROUP in footer
@@ -1214,6 +1266,16 @@ export default function App() {
     }
   };
 
+  const handleUpdateProject = async (id: string, updatedData: any) => {
+    try {
+      await updateDoc(doc(db, 'projects', id), updatedData);
+      fetchProjects();
+    } catch (e) {
+      console.error("Update failed: ", e);
+      throw e;
+    }
+  };
+
   const projects = dbProjects.length > 0 ? dbProjects : SAMPLE_PROJECTS;
 
   return (
@@ -1245,10 +1307,15 @@ export default function App() {
 
       {/* Admin Modals */}
       <AnimatePresence>
-        <AddProjectModal 
-          isOpen={showAddModal} 
-          onClose={() => setShowAddModal(false)} 
-          onAdd={handleAddProject} 
+        <ProjectFormModal 
+          isOpen={showAddModal || !!editingProject} 
+          onClose={() => {
+            setShowAddModal(false);
+            setEditingProject(null);
+          }} 
+          onAdd={handleAddProject}
+          onUpdate={handleUpdateProject}
+          editingProject={editingProject}
         />
       </AnimatePresence>
 
@@ -1355,6 +1422,7 @@ export default function App() {
                       onClick={setSelectedProject}
                       isAdmin={isAdmin}
                       onDelete={handleDeleteProject}
+                      onEdit={setEditingProject}
                     />
                   ))
               ) : (
