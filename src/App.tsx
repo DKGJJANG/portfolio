@@ -973,8 +973,8 @@ export default function App() {
   return (
     <div className="min-h-screen bg-[#F5F5F3] text-brand-green selection:bg-brand-green selection:text-white">
       {!isConfigValid && (
-        <div className="fixed top-0 left-0 w-full bg-red-600 text-white text-[10px] py-2 px-4 z-[200] text-center font-bold tracking-widest uppercase">
-          Firebase API Key is missing. Please set VITE_FIREBASE_API_KEY in AI Studio Secrets.
+        <div className="hidden">
+          Firebase API Key is missing.
         </div>
       )}
       {/* Hidden Admin Tools */}
@@ -1026,10 +1026,9 @@ export default function App() {
       </AnimatePresence>
 
       {/* Header */}
-      <header className="fixed top-0 left-0 w-full z-50 flex justify-between items-center p-6 md:p-10 mix-blend-difference text-white">
-        <div className="font-display text-base tracking-tighter invisible">PUBLIC DESIGN</div>
-        <div className="flex items-center gap-6">
-          {isAdmin && <span className="text-[10px] font-bold tracking-widest uppercase opacity-50">Admin Active</span>}
+      <header className="fixed top-0 left-0 w-full z-50 flex justify-end items-center p-6 md:p-10 pointer-events-none">
+        <div className="flex items-center gap-6 pointer-events-auto">
+          {isAdmin && <span className="text-[10px] font-bold tracking-widest uppercase opacity-50 mix-blend-difference text-white">Admin Active</span>}
         </div>
       </header>
 
@@ -1044,8 +1043,11 @@ export default function App() {
             <div className="flex items-center gap-4 mb-10">
               {selectedCategory && (
                 <motion.button 
-                  onClick={() => setSelectedCategory(null)}
-                  className="text-[15px] md:text-lg font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-all flex items-center gap-4 group"
+                  onClick={() => {
+                    setSelectedCategory(null);
+                    window.scrollTo({ top: 0, behavior: 'instant' });
+                  }}
+                  className="text-[15px] md:text-lg font-bold tracking-widest uppercase opacity-60 hover:opacity-100 transition-all flex items-center gap-4 group mb-8"
                   initial={{ x: -10, opacity: 0 }}
                   animate={{ x: 0, opacity: 1 }}
                   whileHover={{ x: -4 }}
@@ -1164,17 +1166,6 @@ export default function App() {
                   <div className="space-y-1">
                     <p className="text-[11px] font-bold uppercase tracking-widest opacity-40">Email</p>
                     <p className="text-sm md:text-base font-medium opacity-80">dabin_0408@naver.com</p>
-                  </div>
-                  <div className="pt-2">
-                    <a 
-                      href="https://pf.kakao.com/_YGjgb" 
-                      target="_blank" 
-                      rel="noopener noreferrer"
-                      className="inline-flex items-center justify-center gap-2 bg-[#FEE500] text-[#3c1e1e] px-6 py-3 rounded-full text-[10px] font-bold uppercase tracking-widest hover:scale-105 transition-transform w-fit"
-                    >
-                      <span className="w-4 h-4 bg-[#3c1e1e] rounded-full flex items-center justify-center text-[#FEE500] text-[8px]">K</span>
-                      카카오톡 문의하기
-                    </a>
                   </div>
                 </div>
               </div>

@@ -15,7 +15,7 @@ const firebaseConfig = {
 const isConfigValid = !!firebaseConfig.apiKey && firebaseConfig.apiKey !== "REPLACED_BY_ENV_VAR";
 
 if (!isConfigValid) {
-  console.warn("Firebase API Key is missing. Please set VITE_FIREBASE_API_KEY in Secrets.");
+  // Silent failing if not configured
 }
 
 const app = isConfigValid ? initializeApp(firebaseConfig) : null;
