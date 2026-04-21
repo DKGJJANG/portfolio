@@ -1,6 +1,7 @@
 import { initializeApp } from 'firebase/app';
 import { getAuth } from 'firebase/auth';
 import { getFirestore, doc, getDocFromServer } from 'firebase/firestore';
+import { getStorage } from 'firebase/storage';
 const firebaseConfig = {
   apiKey: import.meta.env.VITE_FIREBASE_API_KEY || "",
   authDomain: import.meta.env.VITE_FIREBASE_AUTH_DOMAIN || "",
@@ -21,6 +22,7 @@ if (!isConfigValid) {
 let app = null;
 let auth: any = {};
 let db: any = {};
+let storage: any = {};
 
 if (isConfigValid) {
   try {
@@ -29,13 +31,14 @@ if (isConfigValid) {
     db = firebaseConfig.firestoreDatabaseId 
       ? getFirestore(app, firebaseConfig.firestoreDatabaseId)
       : getFirestore(app);
+    storage = getStorage(app);
     console.log("Firebase initialized successfully.");
   } catch (error) {
     console.error("Firebase initialization failed:", error);
   }
 }
 
-export { auth, db };
+export { auth, db, storage };
 
 async function testConnection() {
   if (!app || !db) return;

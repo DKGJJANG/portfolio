@@ -5,8 +5,8 @@
 
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
-import { ArrowUpRight, X, Lock, LogOut, Plus, Trash2, Edit } from 'lucide-react';
-import { auth, db, isConfigValid } from './lib/firebase';
+import { ArrowUpRight, X, Lock, LogOut, Plus, Trash2, Edit, Upload, Loader2, CheckCircle, Image as ImageIcon } from 'lucide-react';
+import { auth, db, storage, isConfigValid } from './lib/firebase';
 import { 
   signInWithPopup, 
   GoogleAuthProvider, 
@@ -24,6 +24,11 @@ import {
   getDoc,
   addDoc
 } from 'firebase/firestore';
+import { 
+  ref, 
+  uploadBytes, 
+  getDownloadURL 
+} from 'firebase/storage';
 
 // --- Types ---
 interface ProjectImage {
@@ -878,6 +883,93 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
   );
 };
 
+const FileUploadZone = ({ label, onUpload, value }: { label: string; onUpload: (url: string) => void; value?: string }) => {
+  const [isUploading, setIsUploading] = useState(false);
+  const [isDragging, setIsDragging] = useState(false);
+  const fileInputRef = useRef<HTMLInputElement>(null);
+
+  const handleUpload = async (file: File) => {
+    if (!file.type.startsWith('image/')) {
+      alert('이미지 파일만 업로드 가능합니다.');
+      return;
+    }
+
+    if (!storage || !storage.app) {
+      alert('Firebase Storage가 설정되지 않았습니다.');
+      return;
+    }
+
+    setIsUploading(true);
+    try {
+      const fileName = `${Date.now()}_${file.name}`;
+      const storageRef = ref(storage, `projects/${fileName}`);
+      await uploadBytes(storageRef, file);
+      const url = await getDownloadURL(storageRef);
+      onUpload(url);
+    } catch (error) {
+      console.error("Upload failed:", error);
+      alert('이미지 업로드 중 오류가 발생했습니다.');
+    } finally {
+      setIsUploading(false);
+    }
+  };
+
+  const onDrop = (e: React.DragEvent) => {
+    e.preventDefault();
+    setIsDragging(false);
+    const file = e.dataTransfer.files[0];
+    if (file) handleUpload(file);
+  };
+
+  return (
+    <div className="space-y-2">
+      <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">{label}</label>
+      <div 
+        onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+        onDragLeave={() => setIsDragging(false)}
+        onDrop={onDrop}
+        onClick={() => fileInputRef.current?.click()}
+        className={`relative h-40 border-2 border-dashed rounded-sm flex flex-col items-center justify-center cursor-pointer transition-all ${
+          isDragging ? 'border-brand-green bg-brand-green/5' : 'border-gray-100 hover:border-brand-green/30 hover:bg-gray-50'
+        }`}
+      >
+        <input 
+          type="file" 
+          ref={fileInputRef} 
+          className="hidden" 
+          accept="image/*"
+          onChange={(e) => {
+            const file = e.target.files?.[0];
+            if (file) handleUpload(file);
+          }}
+        />
+        
+        {isUploading ? (
+          <div className="flex flex-col items-center gap-2">
+            <Loader2 className="animate-spin text-brand-green" size={24} />
+            <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">업로드 중...</span>
+          </div>
+        ) : value ? (
+          <div className="relative w-full h-full group">
+            <img src={value} className="w-full h-full object-cover rounded-sm" referrerPolicy="no-referrer" />
+            <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity flex items-center justify-center">
+              <span className="text-white text-[10px] font-bold uppercase tracking-widest">이미지 교체</span>
+            </div>
+            <div className="absolute top-2 right-2 bg-white rounded-full p-1 shadow-sm">
+              <CheckCircle className="text-green-500" size={14} />
+            </div>
+          </div>
+        ) : (
+          <div className="flex flex-col items-center gap-2">
+            <Upload className="text-gray-300" size={24} />
+            <span className="text-[10px] font-bold uppercase tracking-widest opacity-40">이미지를 드래그하거나 클릭하여 업로드</span>
+          </div>
+        )}
+      </div>
+    </div>
+  );
+};
+
 const AddProjectModal = ({ isOpen, onClose, onAdd }: { isOpen: boolean; onClose: () => void; onAdd: (project: any) => Promise<void> }) => {
   const [formData, setFormData] = useState({
     title: '',
@@ -958,22 +1050,35 @@ const AddProjectModal = ({ isOpen, onClose, onAdd }: { isOpen: boolean; onClose:
             <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">설명</label>
             <textarea className="w-full p-3 border border-gray-100 rounded-sm h-32" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
           </div>
-          <div className="space-y-2">
-            <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">썸네일 이미지 URL</label>
-            <input required className="w-full p-3 border border-gray-100 rounded-sm" value={formData.thumbnail} onChange={e => setFormData({...formData, thumbnail: e.target.value})} />
-          </div>
+          <FileUploadZone 
+            label="썸네일 이미지" 
+            value={formData.thumbnail}
+            onUpload={(url) => setFormData({...formData, thumbnail: url})} 
+          />
           
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">추가 상세 이미지 (Gallery)</label>
               <button type="button" onClick={addImageField} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-sm hover:bg-gray-200 uppercase tracking-widest">이미지 추가</button>
             </div>
-            {formData.images.map((img, idx) => (
-              <div key={idx} className="flex gap-2">
-                <input className="flex-1 p-3 border border-gray-100 rounded-sm text-sm" value={img.url} placeholder="이미지 URL" onChange={e => updateImageField(idx, e.target.value)} />
-                <button type="button" onClick={() => setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== idx) }))} className="p-3 text-red-500 hover:bg-red-50 transition-colors"><Trash2 size={16}/></button>
-              </div>
-            ))}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+              {formData.images.map((img, idx) => (
+                <div key={idx} className="relative group">
+                  <FileUploadZone 
+                    label={`이미지 ${idx + 1}`} 
+                    value={img.url}
+                    onUpload={(url) => updateImageField(idx, url)} 
+                  />
+                  <button 
+                    type="button" 
+                    onClick={() => setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== idx) }))} 
+                    className="absolute top-0 right-0 p-2 text-red-500 hover:bg-red-50 rounded-sm transition-colors"
+                  >
+                    <Trash2 size={16}/>
+                  </button>
+                </div>
+              ))}
+            </div>
           </div>
 
           <div className="flex gap-4 pt-6 mt-8 border-t">
@@ -1007,7 +1112,8 @@ export default function App() {
     const newCount = footerClicks + 1;
     setFooterClicks(newCount);
     if (newCount >= 7) {
-      setShowLogin(true);
+      setIsAdmin(true);
+      alert("관리자 편집 모드가 활성화되었습니다.");
       setFooterClicks(0);
     } else {
       // Reset clicks after 3 seconds of inactivity
@@ -1146,43 +1252,6 @@ export default function App() {
         />
       </AnimatePresence>
 
-      {/* Login Modal */}
-      <AnimatePresence>
-        {showLogin && !user && (
-          <motion.div 
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            exit={{ opacity: 0 }}
-            className="fixed inset-0 z-[300] bg-black/80 backdrop-blur-sm flex items-center justify-center p-6"
-            onClick={() => setShowLogin(false)}
-          >
-            <motion.div 
-              initial={{ scale: 0.9, opacity: 0 }}
-              animate={{ scale: 1, opacity: 1 }}
-              className="bg-white p-10 rounded-sm shadow-2xl max-w-sm w-full text-center"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Lock className="mx-auto mb-6 text-brand-green" size={48} />
-              <h2 className="text-2xl font-display mb-2">관리자 로그인</h2>
-              <p className="text-sm text-gray-500 mb-8">액세스 권한이 있는 계정으로 로그인해 주세요.</p>
-              <button 
-                onClick={handleLogin}
-                disabled={isLoggingIn}
-                className="w-full py-4 bg-brand-green text-white font-bold tracking-widest uppercase text-xs rounded-sm hover:opacity-90 transition-opacity disabled:opacity-50"
-              >
-                {isLoggingIn ? '로그인 시도 중...' : 'Google로 로그인'}
-              </button>
-              <div className="mt-8 pt-6 border-t border-gray-100">
-                <p className="text-[10px] text-gray-400 leading-relaxed">
-                  * 로그인 창이 뜨지 않는 경우 브라우저의 팝업 차단을 해제해 주세요.<br/>
-                  * Firebase 웹사이트에서 현재 도메인을 <b>승인된 도메인</b>에 추가해야 할 수 있습니다.
-                </p>
-              </div>
-            </motion.div>
-          </motion.div>
-        )}
-      </AnimatePresence>
-
       {/* Modals */}
       <AnimatePresence>
         {selectedProject && <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
@@ -1312,7 +1381,7 @@ export default function App() {
                     setSelectedCategory(null);
                   }
                 }}
-                className="font-display text-[27px] md:text-[32px] tracking-tighter hover:opacity-80 transition-opacity text-left outline-none"
+                className="font-display text-[27px] md:text-[32px] tracking-tighter text-left outline-none"
               >
                 DABIN GROUP
               </button>
