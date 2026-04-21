@@ -1,12 +1,10 @@
 rules_version = '2';
 service cloud.firestore {
   match /databases/{database}/documents {
-    // Default deny
     match /{document=**} {
       allow read, write: if false;
     }
 
-    // Helper Functions
     function isSignedIn() {
       return request.auth != null;
     }
@@ -15,31 +13,19 @@ service cloud.firestore {
       return isSignedIn() && exists(/databases/$(database)/documents/admins/$(request.auth.uid));
     }
 
-    function isValidId(id) {
-      return id is string && id.size() <= 128 && id.matches('^[a-zA-Z0-9_\\-]+$');
-    }
-
     function isValidProject(data) {
-      return data.title is string && data.title.size() > 0 && data.title.size() <= 200 &&
-             data.category is string && data.category.size() > 0 && data.category.size() <= 100 &&
-             data.subtitle is string && data.subtitle.size() <= 300 &&
-             data.description is string && data.description.size() <= 2000 &&
-             data.thumbnail is string && data.thumbnail.size() <= 1000 &&
-             data.images is list && data.images.size() <= 50;
+      return data.title is string && data.title.size() <= 200 &&
+             data.category is string && data.category.size() <= 100;
     }
 
-    // Collections
     match /projects/{projectId} {
       allow read: if true;
-      allow create: if isAdmin() && isValidProject(request.resource.data) && isValidId(projectId);
-      allow update: if isAdmin() && isValidProject(request.resource.data) && 
-                      request.resource.data.id == resource.data.id;
-      allow delete: if isAdmin();
+      allow write: if isAdmin() && isValidProject(request.resource.data);
     }
 
     match /admins/{adminId} {
-      allow read: if isSignedIn() && (request.auth.uid == adminId || isAdmin());
-      allow write: if false; // Only manageable via console or special scripts
+      allow read: if isAdmin();
+      allow write: if false;
     }
   }
 }
