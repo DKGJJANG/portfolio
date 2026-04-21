@@ -6,7 +6,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, X, Lock, LogOut, Plus, Trash2, Edit } from 'lucide-react';
-import { auth, db } from './lib/firebase';
+import { auth, db, isConfigValid } from './lib/firebase';
 import { 
   signInWithPopup, 
   GoogleAuthProvider, 
@@ -900,6 +900,7 @@ export default function App() {
   };
 
   useEffect(() => {
+    if (!isConfigValid || !auth) return;
     const unsubscribe = onAuthStateChanged(auth, async (currentUser) => {
       setUser(currentUser);
       if (currentUser) {
@@ -923,6 +924,10 @@ export default function App() {
   }, []);
 
   const fetchProjects = async () => {
+    if (!isConfigValid || !db) {
+      setIsLoading(false);
+      return;
+    }
     try {
       const q = query(collection(db, 'projects'), orderBy('createdAt', 'desc'));
       const querySnapshot = await getDocs(q);
@@ -967,6 +972,11 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-[#F5F5F3] text-brand-green selection:bg-brand-green selection:text-white">
+      {!isConfigValid && (
+        <div className="fixed top-0 left-0 w-full bg-red-600 text-white text-[10px] py-2 px-4 z-[200] text-center font-bold tracking-widest uppercase">
+          Firebase API Key is missing. Please set VITE_FIREBASE_API_KEY in AI Studio Secrets.
+        </div>
+      )}
       {/* Hidden Admin Tools */}
       {isAdmin && (
         <div className="fixed bottom-24 right-8 z-[150] flex flex-col gap-4">
