@@ -3,7 +3,7 @@
  * SPDX-License-Identifier: Apache-2.0
  */
 
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, AnimatePresence } from 'motion/react';
 import { ArrowUpRight, X, Lock, LogOut, Plus, Trash2, Edit } from 'lucide-react';
 import { auth, db, isConfigValid } from './lib/firebase';
@@ -998,17 +998,21 @@ export default function App() {
   const [dbProjects, setDbProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showAddModal, setShowAddModal] = useState(false);
+  const clickTimeout = useRef<NodeJS.Timeout | null>(null);
 
   // Hidden admin access: 7 clicks on DABIN GROUP in footer
   const handleFooterClick = () => {
+    if (clickTimeout.current) clearTimeout(clickTimeout.current);
+    
     const newCount = footerClicks + 1;
     setFooterClicks(newCount);
     if (newCount >= 7) {
       setShowLogin(true);
       setFooterClicks(0);
+    } else {
+      // Reset clicks after 3 seconds of inactivity
+      clickTimeout.current = setTimeout(() => setFooterClicks(0), 3000);
     }
-    // Reset clicks after 3 seconds
-    setTimeout(() => setFooterClicks(0), 3000);
   };
 
   useEffect(() => {
@@ -1280,8 +1284,12 @@ export default function App() {
               <button 
                 onClick={() => {
                   handleFooterClick();
-                  setSelectedCategory(null); 
-                  window.scrollTo({ top: 0, behavior: 'smooth' });
+                  // Removed automatic scroll to top to allow consecutive clicks
+                  if (!selectedCategory) {
+                    // If already on main page, we don't need to do anything else
+                  } else {
+                    setSelectedCategory(null);
+                  }
                 }}
                 className="font-display text-[27px] md:text-[32px] tracking-tighter hover:opacity-80 transition-opacity text-left outline-none"
               >
