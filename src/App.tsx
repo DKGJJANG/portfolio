@@ -60,6 +60,179 @@ const CATEGORIES = [
 // --- Data ---
 const SAMPLE_PROJECTS: Project[] = [
   {
+    id: 'seoul-hyeon-walking',
+    number: 'NEW',
+    title: '서울현병원 걷기대회',
+    subtitle: 'EVENT DESIGN / Health & Community',
+    description: '지역 주민의 건강 증진을 위해 서울현병원이 주최한 걷기대회의 홍보 브랜딩 및 행사 부스 연출 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/5131.jpg',
+    images: [
+      { url: '/images/5132.jpg' },
+      { url: '/images/5133.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-recycling-exhibit',
+    number: 'NEW',
+    title: '세종재활용센터 전시행사',
+    subtitle: 'EVENT DESIGN / Environment & Exhibition',
+    description: '환경 보호와 자원 순환의 중요성을 알리는 세종재활용센터의 전시 행사 기획 및 부스 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/5121.jpg',
+    images: [
+      { url: '/images/5122.jpg' },
+      { url: '/images/5123.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'singsing-market-festa',
+    number: 'NEW',
+    title: '싱싱장터 모농모농페스타',
+    subtitle: 'EVENT DESIGN / Local Market Festival',
+    description: '지역 농산물 활성화를 위한 싱싱장터 모농모농페스타의 활기차고 창의적인 행사 공간 기획 및 브랜딩 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/5111.jpg',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'hangeul-expo',
+    number: 'NEW',
+    title: '한글상품박람회',
+    subtitle: 'EVENT DESIGN / Exhibition & Culture',
+    description: '한글의 아름다움과 독창성을 알리는 한글상품박람회의 공간 연출 및 전시 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/5101.jpg',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'smart-innovation-assoc',
+    number: 'NEW',
+    title: '한국스마트혁신기업가협회',
+    subtitle: 'EVENT DESIGN / Association Event',
+    description: '한국스마트혁신기업가협회의 주요 행사 기획 및 브랜딩, 공간 연출 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/591.jpg',
+    images: [
+      { url: '/images/592.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'kdhc-event',
+    number: 'NEW',
+    title: '한국지역난방공사 행사',
+    subtitle: 'EVENT DESIGN / Corporate Event',
+    description: '한국지역난방공사의 기업 행사 기획 및 비주얼 디자인, 현장 연출 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/581.jpg',
+    images: [
+      { url: '/images/582 (1).jpg' },
+      { url: '/images/582 (2).jpg' },
+      { url: '/images/582 (3).jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'kospo-ceremony',
+    number: 'NEW',
+    title: '한국남부발전 신세종빛드림 준공기념식',
+    subtitle: 'EVENT DESIGN / Corporate Ceremony',
+    description: '한국남부발전 신세종빛드림 본부의 준공을 축하하는 기념식 행사 기획 및 공간 연출, 메인 무대 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/571.jpg',
+    images: [
+      { url: '/images/572.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'dajeong-water-fest',
+    number: 'NEW',
+    title: '다정동행정복지센터 물놀이축제 행사',
+    subtitle: 'EVENT DESIGN / Community Water Festival',
+    description: '다정동 주민들을 위한 여름 물놀이 축제의 안전한 공간 구성 및 활기찬 분위기 조성을 위한 아이덴티티 디자인과 조형물 설치 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/561.jpg',
+    images: [
+      { url: '/images/562.jpg' },
+      { url: '/images/563.jpg' },
+      { url: '/images/564.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'edu-office-booth',
+    number: 'NEW',
+    title: '교육청 전시행사 부스 재시공',
+    subtitle: 'EVENT DESIGN / Exhibition Booth',
+    description: '교육청 주관 전시 행사를 위한 특수 부스 설계 및 재시공 프로젝트로, 공간 활용도와 교육적 메시지 전달을 극대화한 디자인입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/551.jpg',
+    images: [
+      { url: '/images/552.jpg' },
+      { url: '/images/553.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'childfund-event',
+    number: 'NEW',
+    title: '초록우산 어린이재단 행사',
+    subtitle: 'EVENT DESIGN / Charity & Sharing',
+    description: '초록우산 어린이재단과 함께한 나눔 행사 및 기부 캠페인을 위한 총괄 공간 기획 및 비주얼 아이덴티티 디자인입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/541.jpg',
+    images: [
+      { url: '/images/542.jpg' },
+      { url: '/images/543.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'hansol-baekje',
+    number: 'NEW',
+    title: '한솔백제문화축제',
+    subtitle: 'EVENT DESIGN / Cultural Festival',
+    description: '한솔동의 역사와 전통을 기리는 백제문화축제의 총괄 행사 디자인 및 홍보물 제작 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/531.jpg',
+    images: [
+      { url: '/images/532.jpg' },
+      { url: '/images/533.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'saerom-forest',
+    number: 'NEW',
+    title: '새롬동 행정복지센터 상상의 숲 행사',
+    subtitle: 'EVENT DESIGN / Exhibition & Space',
+    description: '새롬동 행정복지센터 내 상상의 숲 공간에서 진행된 창의적 행사 기획 및 비주얼 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/521.jpg',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'chochiwon-event',
+    number: 'NEW',
+    title: '조치원읍 복합커뮤니티센터 준공식',
+    subtitle: 'EVENT DESIGN / Ceremony & Backdrop',
+    description: '조치원읍 복합커뮤니티센터의 성공적인 준공을 기념하는 행사 기획 및 공간 연출, 메인 무대 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: '/images/511.jpg',
+    images: [
+      { url: '/images/512.jpg' },
+      { url: '/images/513.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'sample-59',
     number: '01',
     title: '세종공동캠퍼스 외벽현수막 및 포토존',
@@ -790,7 +963,7 @@ const ProjectItem: React.FC<{
 
       {/* Hover Overlay */}
       <div className="absolute inset-0 bg-brand-green/80 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex flex-col items-center justify-center p-6 text-center text-white">
-        <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight mb-2 leading-tight">
+        <h3 className="text-xl md:text-2xl font-display font-bold tracking-tight mb-2 leading-tight break-keep">
           {project.title}
         </h3>
         <p className="text-[7px] md:text-[8px] font-medium tracking-widest uppercase opacity-80">
@@ -834,7 +1007,7 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
               <span className="text-[10px] font-bold tracking-[0.3em] uppercase text-brand-green/40 mb-2 block">
                 {project.category}
               </span>
-              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-green">
+              <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-green break-keep">
                 {project.title}
               </h2>
               <p className="mt-4 text-sm md:text-base text-brand-green/60 max-w-xl leading-relaxed font-bold">
@@ -1113,27 +1286,35 @@ const ProjectFormModal = ({
           <div className="space-y-4">
             <div className="flex justify-between items-center">
               <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">추가 상세 이미지 (Gallery)</label>
-              <button type="button" onClick={addImageField} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-sm hover:bg-gray-200 uppercase tracking-widest">이미지 추가</button>
+              <button type="button" onClick={addImageField} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-sm hover:bg-gray-200 uppercase tracking-widest">이미지 공간 추가</button>
             </div>
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {formData.images.map((img, idx) => (
+              {/* Always show at least 2 empty fields if no images exist */}
+              {(formData.images.length === 0 ? [{url: ''}, {url: ''}] : formData.images).map((img, idx) => (
                 <div key={idx} className="relative group">
                   <FileUploadZone 
-                    label={`이미지 ${idx + 1}`} 
+                    label={`상세 이미지 ${idx + 1}`} 
                     value={img.url}
                     onUpload={(url) => {
-                      const newImages = [...formData.images];
-                      newImages[idx] = { ...newImages[idx], url };
+                      let newImages = [...formData.images];
+                      // If we are using the fallback/placeholder array, we need to initialize properly
+                      if (formData.images.length === 0) {
+                        newImages = idx === 0 ? [{url}, {url: ''}] : [{url: ''}, {url}];
+                      } else {
+                        newImages[idx] = { ...newImages[idx], url };
+                      }
                       setFormData(prev => ({ ...prev, images: newImages }));
                     }} 
                   />
-                  <button 
-                    type="button" 
-                    onClick={() => setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== idx) }))} 
-                    className="absolute top-0 right-0 p-2 text-red-500 hover:bg-red-50 rounded-sm transition-colors"
-                  >
-                    <Trash2 size={16}/>
-                  </button>
+                  {formData.images.length > 0 && (
+                    <button 
+                      type="button" 
+                      onClick={() => setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== idx) }))} 
+                      className="absolute top-0 right-0 p-2 text-red-500 hover:bg-red-50 rounded-sm transition-colors"
+                    >
+                      <Trash2 size={16}/>
+                    </button>
+                  )}
                 </div>
               ))}
             </div>
@@ -1255,11 +1436,19 @@ export default function App() {
 
   const handleDeleteProject = async (id: string) => {
     if (!window.confirm("정말 삭제하시겠습니까?")) return;
+    
+    // Check if it's a sample project (starts with 'sample-' or specific hardcoded IDs)
+    if (id.startsWith('sample-') || id === 'chochiwon-event' || id === 'saerom-forest') {
+      alert("샘플 데이터는 데이터베이스에서 삭제할 수 없습니다. 직접 추가하신 프로젝트만 삭제 가능합니다.");
+      return;
+    }
+
     try {
       await deleteDoc(doc(db, 'projects', id));
       fetchProjects();
     } catch (e) {
       console.error("Delete failed: ", e);
+      alert("프로젝트 삭제 중 오류가 발생했습니다.");
     }
   };
 
@@ -1365,7 +1554,7 @@ export default function App() {
                 </motion.button>
               )}
             </div>
-            <h1 className="text-[21px] md:text-[4.2vw] font-display leading-[0.85] tracking-tighter uppercase mb-2 relative inline-block">
+            <h1 className="text-[21px] md:text-[4.2vw] font-display leading-[0.85] tracking-tighter uppercase mb-2 relative inline-block break-keep">
               {selectedCategory || 'PORTFOLIO'}
               <motion.div 
                 className="absolute -bottom-4 left-0 h-[2px] bg-[#D4AF37]"
@@ -1402,7 +1591,7 @@ export default function App() {
                   <div className="relative z-10 flex items-center justify-between py-10 px-6 md:px-12 transition-transform duration-500 group-hover:translate-x-4">
                     <div className="flex items-baseline gap-8 md:gap-16">
                       <div className="flex flex-col">
-                        <h2 className="text-[17px] md:text-[34px] lg:text-[42px] font-display font-black leading-none tracking-tighter transition-all duration-500">
+                        <h2 className="text-[17px] md:text-[34px] lg:text-[42px] font-display font-black leading-none tracking-tighter transition-all duration-500 break-keep">
                           {cat}
                         </h2>
                       </div>
