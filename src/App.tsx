@@ -21,7 +21,8 @@ import {
   getDocs, 
   query, 
   orderBy,
-  getDoc
+  getDoc,
+  addDoc
 } from 'firebase/firestore';
 
 // --- Types ---
@@ -877,6 +878,116 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
   );
 };
 
+const AddProjectModal = ({ isOpen, onClose, onAdd }: { isOpen: boolean; onClose: () => void; onAdd: (project: any) => Promise<void> }) => {
+  const [formData, setFormData] = useState({
+    title: '',
+    subtitle: '',
+    description: '',
+    category: CATEGORIES[0],
+    thumbnail: '',
+    images: [] as { url: string; caption?: string }[]
+  });
+  const [isSubmitting, setIsSubmitting] = useState(false);
+
+  if (!isOpen) return null;
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+    try {
+      await onAdd({
+        ...formData,
+        number: '00', // Auto-generated or placeholder
+        createdAt: new Date().toISOString()
+      });
+      onClose();
+      setFormData({ title: '', subtitle: '', description: '', category: CATEGORIES[0], thumbnail: '', images: [] });
+    } catch (error) {
+      console.error("Failed to add project:", error);
+      alert("프로젝트 추가 중 오류가 발생했습니다.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
+  const addImageField = () => {
+    setFormData(prev => ({ ...prev, images: [...prev.images, { url: '' }] }));
+  };
+
+  const updateImageField = (index: number, value: string) => {
+    const newImages = [...formData.images];
+    newImages[index].url = value;
+    setFormData(prev => ({ ...prev, images: newImages }));
+  };
+
+  return (
+    <motion.div 
+      initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }}
+      className="fixed inset-0 z-[400] bg-black/80 backdrop-blur-sm flex items-center justify-center p-4"
+    >
+      <motion.div 
+        initial={{ scale: 0.9 }} animate={{ scale: 1 }}
+        className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm p-8"
+      >
+        <div className="flex justify-between items-center mb-8 border-b pb-4">
+          <h2 className="text-2xl font-display font-bold">새 프로젝트 추가</h2>
+          <button onClick={onClose}><X size={24} /></button>
+        </div>
+        <form onSubmit={handleSubmit} className="space-y-6">
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">카테고리</label>
+              <select 
+                className="w-full p-3 border border-gray-100 rounded-sm focus:border-brand-green outline-none"
+                value={formData.category}
+                onChange={e => setFormData({...formData, category: e.target.value})}
+              >
+                {CATEGORIES.map(cat => <option key={cat} value={cat}>{cat}</option>)}
+              </select>
+            </div>
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">제목</label>
+              <input required className="w-full p-3 border border-gray-100 rounded-sm" value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} />
+            </div>
+          </div>
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">부제목 (예: PUBLIC DESIGN / Signage)</label>
+            <input required className="w-full p-3 border border-gray-100 rounded-sm" value={formData.subtitle} onChange={e => setFormData({...formData, subtitle: e.target.value})} />
+          </div>
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">설명</label>
+            <textarea className="w-full p-3 border border-gray-100 rounded-sm h-32" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
+          </div>
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">썸네일 이미지 URL</label>
+            <input required className="w-full p-3 border border-gray-100 rounded-sm" value={formData.thumbnail} onChange={e => setFormData({...formData, thumbnail: e.target.value})} />
+          </div>
+          
+          <div className="space-y-4">
+            <div className="flex justify-between items-center">
+              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">추가 상세 이미지 (Gallery)</label>
+              <button type="button" onClick={addImageField} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-sm hover:bg-gray-200 uppercase tracking-widest">이미지 추가</button>
+            </div>
+            {formData.images.map((img, idx) => (
+              <div key={idx} className="flex gap-2">
+                <input className="flex-1 p-3 border border-gray-100 rounded-sm text-sm" value={img.url} placeholder="이미지 URL" onChange={e => updateImageField(idx, e.target.value)} />
+                <button type="button" onClick={() => setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== idx) }))} className="p-3 text-red-500 hover:bg-red-50 transition-colors"><Trash2 size={16}/></button>
+              </div>
+            ))}
+          </div>
+
+          <div className="flex gap-4 pt-6 mt-8 border-t">
+            <button type="button" onClick={onClose} className="flex-1 py-4 border border-gray-200 font-bold uppercase tracking-widest text-[10px] hover:bg-gray-50">취소</button>
+            <button disabled={isSubmitting} type="submit" className="flex-1 py-4 bg-brand-green text-white font-bold uppercase tracking-widest text-[10px] hover:opacity-90 disabled:opacity-50">
+              {isSubmitting ? '저장 중...' : '프로젝트 저장'}
+            </button>
+          </div>
+        </form>
+      </motion.div>
+    </motion.div>
+  );
+};
+
 export default function App() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedProject, setSelectedProject] = useState<Project | null>(null);
@@ -886,6 +997,7 @@ export default function App() {
   const [footerClicks, setFooterClicks] = useState(0);
   const [dbProjects, setDbProjects] = useState<Project[]>([]);
   const [isLoading, setIsLoading] = useState(true);
+  const [showAddModal, setShowAddModal] = useState(false);
 
   // Hidden admin access: 7 clicks on DABIN GROUP in footer
   const handleFooterClick = () => {
@@ -968,6 +1080,16 @@ export default function App() {
     }
   };
 
+  const handleAddProject = async (newProject: any) => {
+    try {
+      await addDoc(collection(db, 'projects'), newProject);
+      fetchProjects();
+    } catch (e) {
+      console.error("Add failed: ", e);
+      throw e;
+    }
+  };
+
   const projects = dbProjects.length > 0 ? dbProjects : SAMPLE_PROJECTS;
 
   return (
@@ -977,18 +1099,34 @@ export default function App() {
           Firebase API Key is missing.
         </div>
       )}
-      {/* Hidden Admin Tools */}
+      {/* Admin Floating Actions */}
       {isAdmin && (
-        <div className="fixed bottom-24 right-8 z-[150] flex flex-col gap-4">
+        <div className="fixed bottom-8 right-8 z-[150] flex flex-col gap-4">
+          <button 
+            onClick={() => setShowAddModal(true)}
+            className="p-5 bg-brand-green text-white rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center group"
+            title="Add Project"
+          >
+            <Plus size={24} />
+          </button>
           <button 
             onClick={handleLogout}
-            className="p-4 bg-brand-green text-white rounded-full shadow-xl hover:scale-105 transition-transform group"
+            className="p-5 bg-white text-brand-green rounded-full shadow-2xl hover:scale-110 transition-all flex items-center justify-center group border border-gray-100"
             title="Logout"
           >
-            <LogOut size={20} />
+            <LogOut size={24} />
           </button>
         </div>
       )}
+
+      {/* Admin Modals */}
+      <AnimatePresence>
+        <AddProjectModal 
+          isOpen={showAddModal} 
+          onClose={() => setShowAddModal(false)} 
+          onAdd={handleAddProject} 
+        />
+      </AnimatePresence>
 
       {/* Login Modal */}
       <AnimatePresence>
