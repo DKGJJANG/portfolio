@@ -18,9 +18,24 @@ if (!isConfigValid) {
   // Silent failing if not configured
 }
 
-const app = isConfigValid ? initializeApp(firebaseConfig) : null;
-export const auth = app ? getAuth(app) : ({} as any);
-export const db = app ? getFirestore(app, firebaseConfig.firestoreDatabaseId) : ({} as any);
+let app = null;
+let auth: any = {};
+let db: any = {};
+
+if (isConfigValid) {
+  try {
+    app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+    db = firebaseConfig.firestoreDatabaseId 
+      ? getFirestore(app, firebaseConfig.firestoreDatabaseId)
+      : getFirestore(app);
+    console.log("Firebase initialized successfully.");
+  } catch (error) {
+    console.error("Firebase initialization failed:", error);
+  }
+}
+
+export { auth, db };
 
 async function testConnection() {
   if (!app || !db) return;

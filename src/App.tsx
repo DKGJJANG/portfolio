@@ -1059,13 +1059,27 @@ export default function App() {
     }
   };
 
+  const [isLoggingIn, setIsLoggingIn] = useState(false);
+
   const handleLogin = async () => {
+    if (!isConfigValid) {
+      alert("Firebase 설정(API Key 등)이 누락되었습니다. AI Studio Secrets에서 설정해 주세요.");
+      return;
+    }
+    setIsLoggingIn(true);
     const provider = new GoogleAuthProvider();
+    provider.setCustomParameters({ prompt: 'select_account' });
+    console.log("Attempting login...");
     try {
-      await signInWithPopup(auth, provider);
-      setShowLogin(false);
-    } catch (e) {
+      const result = await signInWithPopup(auth, provider);
+      if (result.user) {
+        setShowLogin(false);
+      }
+    } catch (e: any) {
       console.error("Login failed: ", e);
+      alert(`로그인에 실패했습니다: ${e.message || '알 수 없는 오류'}\n\n* 브라우저에서 팝업이 차단되었는지 확인해 주세요.`);
+    } finally {
+      setIsLoggingIn(false);
     }
   };
 
@@ -1153,10 +1167,17 @@ export default function App() {
               <p className="text-sm text-gray-500 mb-8">액세스 권한이 있는 계정으로 로그인해 주세요.</p>
               <button 
                 onClick={handleLogin}
-                className="w-full py-4 bg-brand-green text-white font-bold tracking-widest uppercase text-xs rounded-sm hover:opacity-90 transition-opacity"
+                disabled={isLoggingIn}
+                className="w-full py-4 bg-brand-green text-white font-bold tracking-widest uppercase text-xs rounded-sm hover:opacity-90 transition-opacity disabled:opacity-50"
               >
-                Google로 로그인
+                {isLoggingIn ? '로그인 시도 중...' : 'Google로 로그인'}
               </button>
+              <div className="mt-8 pt-6 border-t border-gray-100">
+                <p className="text-[10px] text-gray-400 leading-relaxed">
+                  * 로그인 창이 뜨지 않는 경우 브라우저의 팝업 차단을 해제해 주세요.<br/>
+                  * Firebase 웹사이트에서 현재 도메인을 <b>승인된 도메인</b>에 추가해야 할 수 있습니다.
+                </p>
+              </div>
             </motion.div>
           </motion.div>
         )}
