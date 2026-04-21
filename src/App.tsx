@@ -1133,7 +1133,7 @@ export default function App() {
                   setSelectedCategory(null); 
                   window.scrollTo({ top: 0, behavior: 'smooth' });
                 }}
-                className="font-display text-3xl md:text-4xl tracking-tighter hover:opacity-80 transition-opacity text-left outline-none"
+                className="font-display text-[27px] md:text-[32px] tracking-tighter hover:opacity-80 transition-opacity text-left outline-none"
               >
                 DABIN GROUP
               </button>
