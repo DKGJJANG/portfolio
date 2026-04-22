@@ -99,6 +99,184 @@ const SAMPLE_PROJECTS: Project[] = [
     createdAt: new Date().toISOString()
   },
   {
+    id: 'seoul-hyeon-walking-new',
+    number: 'NEW',
+    title: '서울현병원 걷기대회 행사',
+    subtitle: 'EVENT DESIGN / Health & Community',
+    description: '지역 주민의 건강 증진을 위해 서울현병원이 주최한 걷기대회의 홍보 브랜딩 및 행사 부스 연출 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/12CYM_Qiw7dHBFkir1kYyU-7zIW4Q3bXH/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1Oty6Dh2d4xIPmZMBcyTo7hoTM0PHIact/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1paDm0p1BwhCrcyuTEGSBGSXLMxGzAZFi/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-recycling-exhibit-new',
+    number: 'NEW',
+    title: '세종재활용센터 전시행사',
+    subtitle: 'EVENT DESIGN / Environment & Exhibition',
+    description: '환경 보호와 자원 순환의 중요성을 알리는 세종재활용센터의 전시 행사 기획 및 부스 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1pipB3Z_qT8l2MrMO_sCOkAAJTLAlT5eN/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/14zOwbQw3FcCbJg9JXqdSzPaAMOQUxZU3/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1mggd4NE_Wgj5gX5lk95EK2MLWgL4AYLj/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'singsing-market-festa-new',
+    number: 'NEW',
+    title: '싱싱장터 모농모농페스타',
+    subtitle: 'EVENT DESIGN / Local Market Festival',
+    description: '지역 농산물 활성화를 위한 싱싱장터 모농모농페스타의 활기차고 창의적인 행사 공간 기획 및 브랜딩 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1vsO0qQ2MpgM_jUFnWnrHzDMNPz9NFHVG/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1cllOAztmT5mCXP40GD6vYDlJj7dV5m3I/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'hangeul-expo-new',
+    number: 'NEW',
+    title: '한글상품박람회',
+    subtitle: 'EVENT DESIGN / Exhibition & Culture',
+    description: '한글의 아름다움과 창의적 가치를 알리는 한글상품박람회의 전시 공간 기획 및 연출 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1xD-BweMjSl38nqic-bAOPZjR15StWZO7/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1_eznVjmZ1cKHaYcKMq52njB3dxQvnCmT/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'smart-innovation-new',
+    number: 'NEW',
+    title: '한국스마트혁신기업가협회',
+    subtitle: 'EVENT DESIGN / Corporate Event',
+    description: '한국스마트혁신기업가협회의 주요 행사 기획 및 브랜딩, 조화로운 공간 연출 디자인 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/150otZa997_3IPOFwYfgCZLRUZaZKNxeV/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1ZBVNBZW3JxU4LnKwv9BamFlLtnPIN8Q2/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'kdhc-event-new',
+    number: 'NEW',
+    title: '한국지역난방공사 행사',
+    subtitle: 'EVENT DESIGN / Corporate Event',
+    description: '한국지역난방공사의 기업 행사 기획 및 비주얼 디자인, 브랜드 아이덴티티를 살린 현장 연출 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1ttVxYWk5KUj31ZKXdgAS723eBWEI7_hw/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1NTkGBsdlTRs8R7Lrn1jKeiX68SyIZSn1/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Pd1QRY6zF6Gg-Q0JocQQhSz55VfV0LeB/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/18Zl7cap0ROyv36Vc9E2YBA7ZgxYhaZ1c/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'kospo-ceremony-new',
+    number: 'NEW',
+    title: '한국남부발전 신세종빛드림 준공기념식',
+    subtitle: 'EVENT DESIGN / Corporate Ceremony',
+    description: '한국남부발전 신세종빛드림 본부의 준공을 축하하는 기념식 행사 기획 및 총괄 운영, 메인 무대와 공간 연출 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1YWGZomGkSo-8tDJ3bZ85UTq8AU99A-kU/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1szN_HJZe3u5jtAsZTc0e2_PU4-lKgCqx/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'dajeong-water-fest-new',
+    number: 'NEW',
+    title: '다정동 행정복지센터 물놀이 축제 행사',
+    subtitle: 'EVENT DESIGN / Community Festival',
+    description: '다정동 주민들을 위한 여름 물놀이 축제 행사 기획 및 안전한 공간 구성, 현장 분위기를 고조시키는 조형물 설치 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/16sP6YiB4fiP_LvROsFb8j6XYg6i3MOwE/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1p2RhMO4uwW1VLv6XrQbeDWSj212YvhCb/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/10T3FqYdtWdntxo0B0ELUnCtze7HAoMyk/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1nkj9sqPQ5tkZX-v07aiZeDxXcKN9qY1Z/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'edu-office-booth-new',
+    number: 'NEW',
+    title: '교육청 전시행사 부스',
+    subtitle: 'EVENT DESIGN / Exhibition Booth',
+    description: '교육청 주관 전시 행사를 위한 특수 부스 설계 및 시공 프로젝트로, 공간 활용도를 극대화한 전시 연출 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1MpyfzRbBnZP-4r4kLbanCOVdK_6Uw3Fo/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1ePram5_tcdcyBVCGpHyBcglT18UE7VRV/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1OfB_bImLy1x1QpNFFUWD54tF7ZBEwxiN/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'childfund-event-new',
+    number: 'NEW',
+    title: '초록우산 어린이재단 행사',
+    subtitle: 'EVENT DESIGN / Charity & Social Value',
+    description: '초록우산 어린이재단의 나눔 가치를 전달하기 위한 행사 기획 및 비주얼 아이덴티티, 공간 연출 총괄 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1TBmZzslxGStDBjov8N11kK9CuOqTNQOF/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1cNoHqXE07OiEzrKrNAkxNIAkDLYQ_l-3/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Rr-lPJwB4GmnydgJIRi5Zi3ziaQjYbUe/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'hansol-baekje-new',
+    number: 'NEW',
+    title: '한솔백제문화축제',
+    subtitle: 'EVENT DESIGN / Cultural Festival',
+    description: '한솔동의 역사와 전통을 기리는 백제문화축제의 총괄 행사 디자인 및 홍보물 제작 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/176j8E7kfCWkdIwLMOKGeD8nepUXolfUv/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/11zWtU_rU6Tt5HU165uZk0dkkG14S6uSA/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1osLGuKYSvGwENsmkelG-vl4jOQeIkuIW/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'saerom-forest-new',
+    number: 'NEW',
+    title: '새롬동 행행정복지센터 상상의 숲',
+    subtitle: 'EVENT DESIGN / Exhibition Space',
+    description: '새롬동 행정복지센터 내 상상의 숲 공간에서 진행된 창의적 전시 기획 및 공간 연출 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://drive.google.com/file/d/1UaxCuo_A3Klj3H1C34zyKuCLO281JNGU/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1EXHyEyVAXUrZ45Z_huqFmlvvESJMBWHx/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'chochiwon-ceremony-new',
+    number: 'NEW',
+    title: '조치원읍 복합커뮤니티센터 준공식',
+    subtitle: 'EVENT DESIGN / Ceremony',
+    description: '조치원읍 복합커뮤니티센터의 성공적인 준공을 기념하는 행사 기획 및 총괄 운영, 공간 연출 프로젝트입니다.',
+    category: '행사디자인',
+    thumbnail: 'https://lh3.googleusercontent.com/d/1H-pS5AJshzraCo9hG10OZdBlXIC4Btj_=s1600',
+    images: [
+      { url: 'https://lh3.googleusercontent.com/d/1H-pS5AJshzraCo9hG10OZdBlXIC4Btj_=s1600' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'seoul-hyeon-walking',
     number: 'NEW',
     title: '서울현병원 걷기대회',
@@ -921,6 +1099,18 @@ const SAMPLE_PROJECTS: Project[] = [
 
 // --- Components ---
 
+const getDirectImageUrl = (url: string) => {
+  if (!url) return '';
+  // Support both drive.google.com and docs.google.com links
+  const driveRegex = /(?:drive\.google\.com\/file\/d\/|docs\.google\.com\/uc\?id=|lh3\.googleusercontent\.com\/d\/)([a-zA-Z0-9_-]+)/;
+  const match = url.match(driveRegex);
+  
+  if (match && match[1]) {
+    return `https://lh3.googleusercontent.com/d/${match[1]}=s1600`;
+  }
+  return url;
+};
+
 const MarqueeImages = ({ images, index }: { images: string[]; index: number }) => {
   const isEvenRow = index % 2 !== 0; // index 0,2,4 are 1st, 3rd, 5th rows. 1,3 are 2nd, 4th.
   
@@ -940,7 +1130,7 @@ const MarqueeImages = ({ images, index }: { images: string[]; index: number }) =
         {[...images, ...images, ...images].map((src, idx) => (
           <img
             key={idx}
-            src={src}
+            src={getDirectImageUrl(src)}
             alt="Project preview"
             className="h-[90%] aspect-video object-cover rounded-sm grayscale group-hover:grayscale-0 transition-all duration-700"
             referrerPolicy="no-referrer"
@@ -970,7 +1160,7 @@ const ProjectItem: React.FC<{
     >
       {/* Main Thumbnail */}
       <img 
-        src={project.thumbnail} 
+        src={getDirectImageUrl(project.thumbnail)} 
         alt={project.title}
         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
         referrerPolicy="no-referrer"
@@ -1069,7 +1259,7 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
           {/* Main Thumbnail */}
           <div className="w-full aspect-video rounded-sm overflow-hidden bg-gray-50">
             <img 
-              src={project.thumbnail} 
+              src={getDirectImageUrl(project.thumbnail)} 
               alt={project.title} 
               className="w-full h-full object-cover"
               referrerPolicy="no-referrer"
@@ -1083,7 +1273,7 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
                 <div key={idx} className="space-y-4">
                   <div className="w-full rounded-sm overflow-hidden bg-gray-50">
                     <img 
-                      src={typeof imgObj === 'string' ? imgObj : imgObj.url} 
+                      src={getDirectImageUrl(typeof imgObj === 'string' ? imgObj : imgObj.url)} 
                       alt={`${project.title} gallery ${idx + 1}`} 
                       className="w-full h-full object-cover"
                       referrerPolicy="no-referrer"
