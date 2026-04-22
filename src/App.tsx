@@ -60,17 +60,165 @@ const CATEGORIES = [
 // --- Data ---
 const SAMPLE_PROJECTS: Project[] = [
   {
+    id: 'tipa-interior-new',
+    number: 'NEW',
+    title: '중소기업기술정보진흥원',
+    subtitle: 'INTERIOR DESIGN / Office Space',
+    description: '중소기업기술정보진흥원(TIPA)의 전문성과 효율성을 고려한 사무 공간 인테리어 디자인 및 환경 개선 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/16SgqxZhiorKx7rIkYYaEEdU-EbGJ6oFq/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1lwc1kTc2owfDCHlnRoAmcPSM_zzJ_sEZ/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1zTq0LyMKcPKIl2bSznfFV5pgwgco-idW/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'jeonui-community-gym-floor-new',
+    number: 'NEW',
+    title: '전의면 복합커뮤니티센터 체력단련실 바닥공사',
+    subtitle: 'INTERIOR DESIGN / Gym Flooring',
+    description: '전의면 복합커뮤니티센터 내 체력단련실의 안전과 내구성을 고려한 전문 헬스장 바닥재 시공 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1dATdlUXNzSVr5yZlS_H_R0j7hb__ihws/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1zGSRuSCUAt5R64vsDYttYgCKqAGRzJcS/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1n2z7Uzjcom2g64g9NAs5iALUJqorhua1/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'kepco-signage-new',
+    number: 'NEW',
+    title: '한국전력공사 세종SS 3개실 흡음판공사',
+    subtitle: 'INTERIOR DESIGN / Acoustic Treatment',
+    description: '한국전력공사 세종SS 시설 내 3개실의 정숙한 환경 조성을 위한 고성능 흡음판 시공 및 인테리어 개선 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1bRggcfOhzl29cfhCYnqlPFZWftTr1emu/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1KzzbZPrLQtu9rZniHsGQAnVZQITFAdRa/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1hsCBdmdaFX8T6p9tr2YL4j_IIqT2nwoN/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1QZdLnDVOWNlM4euZ4sRQvAC5QAa3ZsGq/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-transit-blind-new',
+    number: 'NEW',
+    title: '세종도시교통공사 롤블라인드',
+    subtitle: 'INTERIOR DESIGN / Roll Blind Installation',
+    description: '세종도시교통공사 사무 공간의 쾌적한 환경 조성을 위한 기능성 롤블라인드 설치 및 공간 스타일링 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1WXvTq1137nWulU2noz72Y0ymhZ0NUzN_/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1IrA8IVf3B5oXOS0c8BGItvQ1aE_26PcG/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1lMeccv9mDmJEr_oBQpLevu8RoROYjVf9/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1MHh5gTXiu6OHqebcmhNC_9tPSnjJPU29/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'south-sejong-youth-center-new',
+    number: 'NEW',
+    title: '남세종청소년센터 공사',
+    subtitle: 'INTERIOR DESIGN / Youth Center',
+    description: '남세종청소년센터의 청소년들을 위한 창의적이고 안전한 공간 조성 및 인테리어 시공 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1pJwiqDpZlrFGawS5xIOX2XrGmBe5w9P_/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1p8pnic6g89LNpO2A9-y_z5AiDNSbMobj/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1pq3Ns9xeAcnqu8bGSJSvYJIA4chpu3lE/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-transit-door-new',
+    number: 'NEW',
+    title: '세종도시교통공사 양개형 방화문 공사',
+    subtitle: 'INTERIOR DESIGN / Fire Door Installation',
+    description: '세종도시교통공사 시설 내 안전 규격을 준수하는 고기능성 양개형 방화문 교체 및 시공 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1QBt7BBV_nLot_fD1zpc18sGO-yKcsmBV/view?usp=drive_link',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'first-village-6-pavilion-new',
+    number: 'NEW',
+    title: '첫마을 6단지 정자 지붕보수 공사',
+    subtitle: 'INTERIOR DESIGN / Facility Repair',
+    description: '첫마을 6단지 내 주민 휴게 공간인 정자의 노후된 지붕을 보수하여 안전성과 미관을 개선한 시설 관리 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1-yCqz-zgoqRH8SvCuIKwpPeVyMDGp1cI/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1ES0_ToTotNpS_pR03tDJrtTbxk583_t0/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1xK_YmPTzzkk4shK71FoasQKQGLvuNRG9/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1qIHCnhPjIHFxbb1K64P4nC7kWQs09MF3/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'first-village-6-mold-new',
+    number: 'NEW',
+    title: '첫마을 6단지 인테리어 필름 몰딩',
+    subtitle: 'INTERIOR DESIGN / Interior Film',
+    description: '첫마을 6단지 주거 공간의 몰딩 부분을 세련된 인테리어 필름으로 랩핑하여 현대적이고 깔끔한 분위기로 개선한 리모델링 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1dq4chKvhEnf8frcki28gpEo4qpODKpBv/view?usp=drive_link',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'klri-signage-new',
+    number: 'NEW',
+    title: '한국법제연구원 호실 표찰',
+    subtitle: 'INTERIOR DESIGN / Signage',
+    description: '한국법제연구원 청사 내 각 실의 용도를 명확히 안내하고 공간의 품격을 더하는 현대적인 호실 표찰 디자인 및 제작 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1u-Cg88VULU44a7Hjki4tSiWaXX-iFGl5/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1Kd77ireq9kEdA5lk6dHt12412vbrWs5N/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Plw6FPSzmOxkvScXukQmlp5LolumAUnD/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1ZV9ylpcx8_Q3YSFOCDblddfBBqWVOCqa/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'urban-appel-entrance-new',
+    number: 'NEW',
+    title: '어반아펠 세대현관문 시공',
+    subtitle: 'INTERIOR DESIGN / Door Installation',
+    description: '어반아펠 단지의 세대별 현관문 교체 및 시공 프로젝트로, 주거 공간의 첫인상을 결정짓는 현대적인 도어 솔루션을 제공했습니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1m6f1fbcLZY9SX8MdMmT3xEhoRHc2lQV3/view?usp=drive_link',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'air-rail-investigation-new',
+    number: 'NEW',
+    title: '항공철도사고조사위원회',
+    subtitle: 'INTERIOR DESIGN / Office Space',
+    description: '항공철도사고조사위원회의 전문성과 상징성을 극대화한 오피스 공간 인테리어 디자인 및 시공 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: 'https://drive.google.com/file/d/1Xw-wg5fZq3wMTWNSiOiN5tfLCW5AzotO/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1G316nkR0BLCl6TSPtFXKDQYU7Tr1Eddb/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'jeondong-community-center-space',
     number: 'NEW',
     title: '전동면 복합커뮤니티센터 마주침공간',
     subtitle: 'INTERIOR DESIGN / Community Space',
     description: '지역 주민들이 편하게 소통하고 어우러질 수 있는 전동면 복합커뮤니티센터 내 마주침 공간의 인테리어 기획 및 시공 프로젝트입니다.',
     category: '인테리어디자인',
-    thumbnail: '/images/431.jpg',
+    thumbnail: 'https://drive.google.com/file/d/1fQfSuJesM1wk6f1QXgHjzXd42R4KIkHc/view?usp=drive_link',
     images: [
-      { url: '/images/432.jpg' },
-      { url: '/images/433.jpg' },
-      { url: '/images/434.jpg' }
+      { url: 'https://drive.google.com/file/d/1adKxKb75djNGjlTvLrxoxBtUT4ltMBay/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1ZvctzlSQuUnTU1U_UHS50BYdNTc-KtCM/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1MPhbfY6FdXI23U_4eEKtyZVHS3yb1ieg/view?usp=drive_link' }
     ],
     createdAt: new Date().toISOString()
   },
@@ -81,8 +229,10 @@ const SAMPLE_PROJECTS: Project[] = [
     subtitle: 'INTERIOR DESIGN / Reception',
     description: '세종시보건소 방문객 편의와 브랜드 가치를 높이는 메인 안내데스크 공간 리뉴얼 및 인테리어 디자인 프로젝트입니다.',
     category: '인테리어디자인',
-    thumbnail: '/images/421.jpg',
-    images: [],
+    thumbnail: 'https://drive.google.com/file/d/1jhDAZGiiOvLNLLJpmu2uVI6Ebm8CJPNZ/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1gXwNeY5MbMK_wz0Bn8h9KyTjziO0VHA1/view?usp=drive_link' }
+    ],
     createdAt: new Date().toISOString()
   },
   {
@@ -253,7 +403,7 @@ const SAMPLE_PROJECTS: Project[] = [
   {
     id: 'saerom-forest-new',
     number: 'NEW',
-    title: '새롬동 행행정복지센터 상상의 숲',
+    title: '새롬동 행정복지센터 상상의 숲',
     subtitle: 'EVENT DESIGN / Exhibition Space',
     description: '새롬동 행정복지센터 내 상상의 숲 공간에서 진행된 창의적 전시 기획 및 공간 연출 프로젝트입니다.',
     category: '행사디자인',
