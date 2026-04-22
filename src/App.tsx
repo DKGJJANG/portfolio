@@ -60,6 +60,32 @@ const CATEGORIES = [
 // --- Data ---
 const SAMPLE_PROJECTS: Project[] = [
   {
+    id: 'jeondong-community-center-space',
+    number: 'NEW',
+    title: '전동면 복합커뮤니티센터 마주침공간',
+    subtitle: 'INTERIOR DESIGN / Community Space',
+    description: '지역 주민들이 편하게 소통하고 어우러질 수 있는 전동면 복합커뮤니티센터 내 마주침 공간의 인테리어 기획 및 시공 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: '/images/431.jpg',
+    images: [
+      { url: '/images/432.jpg' },
+      { url: '/images/433.jpg' },
+      { url: '/images/434.jpg' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-health-center-desk',
+    number: 'NEW',
+    title: '세종시보건소 안내데스크',
+    subtitle: 'INTERIOR DESIGN / Reception',
+    description: '세종시보건소 방문객 편의와 브랜드 가치를 높이는 메인 안내데스크 공간 리뉴얼 및 인테리어 디자인 프로젝트입니다.',
+    category: '인테리어디자인',
+    thumbnail: '/images/421.jpg',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'air-rail-investigation-entrance',
     number: 'NEW',
     title: '항공철도사고조사위원회 출입구',
