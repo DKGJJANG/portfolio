@@ -60,6 +60,157 @@ const CATEGORIES = [
 // --- Data ---
 const SAMPLE_PROJECTS: Project[] = [
   {
+    id: 'nasung-fc-branding-new',
+    number: 'NEW',
+    title: '나성FC',
+    subtitle: 'BRANDING DESIGN / Football Club Identity',
+    description: '나성FC의 정체성과 단합력을 상징하는 엠블럼 디자인 및 통합 브랜딩 시스템 구착 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1Ih9pBA_kWuVcqagTyw0T1Qu5TDXZ7XmH/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1diPWdhYDUM5faW00QRNYPw5I3g3gP-Gz/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1wUvWBXZq_C6JpAGxA77MifbTrMQo1L_h/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'allstar-batting-branding-new',
+    number: 'NEW',
+    title: '올스타배팅센터',
+    subtitle: 'BRANDING DESIGN / Sports Brand Identity',
+    description: '올스타배팅센터의 열정적이고 역동적인 스포츠 에너지를 시각화한 로고 디자인 및 통합 브랜딩 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1W3txfzhIuk5KdMoRbHNuKnIH9cWLJZ8n/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1EpbtMYC943xuksaxo5eRRw87qR7FZ51Y/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'daol-farm-studio-branding-new',
+    number: 'NEW',
+    title: '다올팜스튜디오',
+    subtitle: 'BRANDING DESIGN / Agricultural Brand Identity',
+    description: '다올팜스튜디오의 신선하고 자연 친화적인 이미지를 구축하기 위한 통합 브랜드 아이덴티티 및 패키지 디자인 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1n2rmShne-CXtQyHYc3RfR82oDZiHG_OA/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1sVGN6zrDUR-W8-Ta4gAhUqW-GeLylXAQ/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1byKWhpjun051fLMJXhzGEgI_oPDuwv15/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1SZ8-quIUhhQJktl8eFQhUE1zJIwZcmOo/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1uYc2y-Qa-92L_3TqptpUSS4PEBpV5u2S/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1BrwKBcO9GfUMvaONNg4-OtMh2JxX0UHr/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1VGqKeMNpv6z428ZBhu0lg4oyZ-DN00bF/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1iLk5pyojURsetPDuQQrvb78iFNE5RwN1/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'nasung-kindergarten-branding-new',
+    number: 'NEW',
+    title: '나성유치원',
+    subtitle: 'BRANDING DESIGN / Educational Identity',
+    description: '나성유치원의 따뜻하고 창의적인 교육 환경을 반영한 브랜드 아이덴티티 및 공간 브랜딩 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/17H_NGfUG66X_9MJm7l9GM6Stb3iebS5m/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1le-gzCMyjn-VdtJlyVja-yzgDviQHdhQ/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Szo6whKrp4qxzdfpdIuF0TUSsAggLq3A/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1cPSfjm32fiTJsIaK5i536bXG6Rm1jqT6/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1LK_P2pDcaOxoUzfHrf0DA7xfbzJGLg8H/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1mB5MVcsPBYECnB4tGGnRUL0VbY5RHcFn/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1hG1gWfQ3S-4z3kDy9ByPnecuJdTpUt4B/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1oqdrUm93_J0vRENo9MCWv8cdJ0jNJNSB/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-teacher-union-branding-new',
+    number: 'NEW',
+    title: '세종교사노동조합',
+    subtitle: 'BRANDING DESIGN / Organization Identity',
+    description: '세종교사노동조합의 정체성과 가치를 시각적으로 표현한 브랜드 아이덴티티 및 통합 브랜딩 솔루션 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1HL2-7ZMI8_OtniL1XIQOdiY2pVon5ayw/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1HL2-7ZMI8_OtniL1XIQOdiY2pVon5ayw/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'izakaya-bam-branding-new',
+    number: 'NEW',
+    title: '이자카야 밤',
+    subtitle: 'BRANDING DESIGN / Izakaya Identity',
+    description: "심야 식당 '밤(BAM)'의 감성적인 분위기를 담아낸 로고 디자인 및 메뉴판, 내부 사인 시스템 브랜딩 프로젝트입니다.",
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1NPCRK3tYGI9QBgJwA-OXV2LptedsNrjP/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1KVjhFFEGCql9SL7VrXKnEUX_QwLRhq6m/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1ZHsMiYjSVRiBen58ojggHbsMWs6eSAp0/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1gfk4rnnHMLOipW_y2Du7V4Akkdb3ZL-B/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'tarot-monad-branding-new',
+    number: 'NEW',
+    title: '타로모나드',
+    subtitle: 'BRANDING DESIGN / Tarot Brand Identity',
+    description: '타로모나드(Tarot Monad)의 신비롭고 깊이 있는 철학을 시각화한 브랜드 로고 디자인 및 어플리케이션 시스템 통합 브랜딩 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1nlfJ28VMHgv5xb1CrSGeJV2zIORnDLwt/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/10d8juiP6Mpt9VnNuSOEusYMuWnka2R2Q/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1nqKe7cKnS4ojxWmnptDlqxXwbmtaWaJ0/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1HkF2OK7x1g8VtFeT_24LYqaZP6Xx6bui/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1yN9pLErP-KNCreEcE1SLzwvO2FOWDhgI/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1AconhmMgnKuJBVv5CuFYrXalSlZ9u2Sf/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/16Koj2mulTsk5sjG1hcUIM7FQF5mk_Gqb/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/10rVKH71dAB_x1h4Ie4STfyR3DdopEMS9/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'onsejong-highschool-branding-new',
+    number: 'NEW',
+    title: '온세종고등학교',
+    subtitle: 'BRANDING DESIGN / School Identity',
+    description: '온세종고등학교의 교육 가치와 상징성을 현대적으로 해석한 학교 브랜드 아이덴티티 및 응용 디자인 시스템 구축 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1zo6hMJWnIkirLTr1fFITiDDBICnXcMRg/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1igfVzQnP-iRHgVWkmyAvyK3j880sJRlO/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1JQh1f3XVRLbBsri-v7c7rYirkAJHFrTn/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1789rdYveZ24UNBLcG_gQBIVOV7tXhrMe/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1YzA_8ZeKy8LEY6-Ls7OdUS1KfLFhcmdO/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/14ikzTWP8cg98y-ENrZYTc7R-zZRx9Ihm/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-campus-highschool-branding-new',
+    number: 'NEW',
+    title: '세종캠퍼스고등학교',
+    subtitle: 'BRANDING DESIGN / Educational Identity',
+    description: '세종캠퍼스고등학교의 비전과 정체성을 담은 통합 브랜딩 및 사인 시스템 디자인 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1YEKubcOsj_oOMKupu361nYHGSn-2NUeG/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1v7jrm1xo2YYpjrGrOxSha85u4NzqrwRQ/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1qr3Mzoar8zBRAV5eY2UsTvd6WRMpku2V/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/15-H9yVp3U5flQnxP5VohRp8a_c9yvvO6/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1LNWTDrWWCXS2I7dY04AzwlxL3ZZfdbky/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1cxJsB35A4-KsWGWUM3DaLcFhKXVYnELq/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1zZHxJwYRxMPCaylcRLM99TO2OaHoZRCc/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1EuAKK76PIwpjT_NVxzODBHDLX6rkaYRl/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1TuwYaSIsm3a6plZzqVGb7OYl9V8IJZHB/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1AEl-y5XfP3i6GudA0PmYtuWJqHlCnfDh/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1iBgFLK74LhR5s_uZahpjzTfOZWn7Y931/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'campus-highschool-evacuation-new',
     number: 'NEW',
     title: '캠퍼스 고등학교 피난안내도',
