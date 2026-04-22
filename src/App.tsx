@@ -60,6 +60,233 @@ const CATEGORIES = [
 // --- Data ---
 const SAMPLE_PROJECTS: Project[] = [
   {
+    id: 'sejong-shared-campus-banner-public-new',
+    number: 'NEW',
+    title: '세종공동캠퍼스 외벽 현수막',
+    subtitle: 'PUBLIC DESIGN / Environmental Graphics',
+    description: '세종공동캠퍼스의 개교와 비전을 홍보하기 위해 대형 외벽 공간을 활용한 임팩트 있는 비주얼 메시지 및 현수막 디자인 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1K7IQjvhVstr-JE2sQu7L3OyUB3U0in4O/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1z1SdCrOlWGscIT_bwAUvrDeROmaQgKUy/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1_08JROEVopNMcZYQ1vNdt3jLSRPFULAP/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'campus-high-evacuation-map-public-new',
+    number: 'NEW',
+    title: '캠퍼스고등학교 피난안내도',
+    subtitle: 'PUBLIC DESIGN / Safety & Information Design',
+    description: '캠퍼스고등학교 학생들의 안전한 대피 환경을 조성하기 위해 시인성과 가독성을 최적화한 통합 피난안내도 디자인 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1XTftU_wf9DTac-2adMEwT_8nBWu5sS_K/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1UbYwlZqqa7IQ7LMB44w1JnYOQh_YeIM4/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1sajxzwI28YSQg7SjW3JX9AjR4Q8lmM_0/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1etk00D6ftRHBfRHW9BCEL1Rsv9EWPDhC/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1aUdQO9YKW2NJKWofwA4KUGH3QnLySDtu/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-transit-flagpole-public-new',
+    number: 'NEW',
+    title: '세종도시교통공사 국기게양대',
+    subtitle: 'PUBLIC DESIGN / Facilities Design',
+    description: '세종도시교통공사의 위상과 상쾌한 도시 이미지를 결합한 현대적인 국기게양대 공공 시설물 디자인 및 설치 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1GZCwVGobubmSTomQ1URYmw_llfC_ZQYD/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1OUQFfwQY6yiYmimlKRaRLnCiVmka6kc8/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1_Pb1B0ftxIToVu5-W-SV-ksK2mwjyjuo/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-transit-ouling-public-new',
+    number: 'NEW',
+    title: '세종도시교통공사 어울링대여소',
+    subtitle: 'PUBLIC DESIGN / Urban Infrastructure',
+    description: "세종시 공영자전거 '어울링' 대여소의 시인성과 사용성을 높이기 위한 통합 공공 시각 디자인 및 시설물 브랜딩 프로젝트입니다.",
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1eDC9JDtsnAo_GnGgeHt0ArxoheEFtgh8/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1OEuABrPkJuIWhh-D-SmxvMYZ4q6Jh_lN/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1djom6q-2Tn2tZBn6oNAe8K6VosEud8ds/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Su5p_a9NbOkNCMtlbaId1u7M3fzQX87k/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1LlhWAyyLoI03M1o-j1GQeySuKfH6bP5t/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'yeondong-myun-bulletin-public-new',
+    number: 'NEW',
+    title: '연동면사무소 게시판',
+    subtitle: 'PUBLIC DESIGN / Information Board',
+    description: '연동면사무소의 행정 정보를 주민들에게 효율적으로 전달하기 위해 설계된 기능적이고 미학적인 공공 게시판 디자인 및 설치 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/19CsA270K1xGYtbjFurle0-g4yI3T_YH_/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/10z2_i6P9HtS2Mpc9eiGbAC-K3vm3ivN0/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1_DxCX9HotyxE_nJq9ePwHOsBmY-mZ5Za/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1kQiZScdWUOhzc74dBYtfMk_o78IaDGYM/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'en-corp-signage-branding-new',
+    number: 'NEW',
+    title: '이엔코퍼레이션 후렉스 간판/지주간판',
+    subtitle: 'BRANDING DESIGN / Corporate Signage',
+    description: '이엔코퍼레이션의 기업 이미지를 강화하고 공간의 전문성을 높이는 통합 후렉스 간판 및 지주간판 디자인 프로젝트입니다.',
+    category: '브랜딩디자인',
+    thumbnail: 'https://drive.google.com/file/d/1oQ3r_Y0G90WOAKoMQXze4T3gTuu7jqtU/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1YzVTTqruAmKJL2LnpRZweUMyYjwo5ca8/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'bohun-committee-signage-public-new',
+    number: 'NEW',
+    title: '보훈심사위원회 채널간판',
+    subtitle: 'PUBLIC DESIGN / Building Signage',
+    description: '보훈심사위원회의 권위와 신뢰성을 상징하는 전문적인 채널간판 시스템 디자인 및 설치 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1Iwmbkvn-f2gcP2bP2n9S-NM7Cvgst47-/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1Iwmbkvn-f2gcP2bP2n9S-NM7Cvgst47-/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-arts-center-signage-public-new',
+    number: 'NEW',
+    title: '세종문화예술회관 지주간판/입간판',
+    subtitle: 'PUBLIC DESIGN / Signage System',
+    description: '세종문화예술회관의 상징적 조형미와 정보 전달력을 극대화한 통합 지주간판 및 입간판 디자인 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1wFFRSNIrTXf338vPZcGmAKcZ-wevNh5E/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1jPTS7ecz3lYKmjwWWyougKC98wJaAGL8/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1CuAJbJnYXtD3ls7HfV6w-oZuSrYHVegJ/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1OHduK46Fl6FSQjiwJJNn_aqQudge7ISD/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1wXMyEANz9GhYXmO0BKTPcg4kp9dYZOO2/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'daepyeong-dong-welfare-center-sculpture-public-new',
+    number: 'NEW',
+    title: '대평동 행정복지센터 조형물',
+    subtitle: 'PUBLIC DESIGN / Artwork & Sculpture',
+    description: '대평동 행정복지센터의 문화적 가치를 높이고 주민들에게 친근한 공간 경험을 선사하는 예술적 조형물 디자인 및 설치 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/126kYbUgruGk9HUUOOIAzpfOhss9XpLWN/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1bntIskSAS9iOZcGfqZMqwMPYWfcmcMea/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1j4vlzddKjs2iTJnT-EgpdDebTjiog7yJ/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1dnRvRR1UwQ2sW-vXdU-wEJ2qjni6NKnO/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1gESdsivLN9Zrd94qriaVEyVevlF-sWPL/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'yongpo-ro-sign-improvement-public-new',
+    number: 'NEW',
+    title: '용포로 간판개선사업',
+    subtitle: 'PUBLIC DESIGN / Signage Improvement',
+    description: '용포로 일대의 도시 미관을 개선하고 상권 활성화를 위해 진행된 통합 간판 디자인 및 거리 경관 개선 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1Z7OzyrziulcfIPshzSwYTjonsKXwXDV4/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1GeuTIzL-53pNtkInUM5Ay1QPxQd5OA1T/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/15VDu6PNl6Md4CUxT7rWiWjmCtNcZurRb/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1AFCgU122MfaHCJx_ZNHfPlZCsvEe8P2b/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1qEq0gfNKQzxmsmrBSczsy3Vo2zEA4qCh/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/19K_Z5Iv_7itT5Dz4ZsnQd6JBR_fZVs4W/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1FPedO8zEDFdqBx3M_Icaz389N_7bYy2V/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1GccguMeyL8T-Kz6_p19CPMSbQi5vAx3z/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'jeonui-community-center-public-new',
+    number: 'NEW',
+    title: '전의면복합커뮤니티센터',
+    subtitle: 'PUBLIC DESIGN / Community Branding',
+    description: '전의면복합커뮤니티센터의 주민 친화적 공간 가치를 전달하는 시각 디자인 및 통합 브랜딩 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1sQ3RXGlhCkegCufB7s3t063ZmDZdis1U/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1EWO2xyltrq5XO9Bxh9XU7UlQ9giA7U6H/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/16TWtiNOlFbauvZkr_gOypHmhiN1Hr9MM/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'korea-rural-community-public-new',
+    number: 'NEW',
+    title: '한국농어촌공사',
+    subtitle: 'PUBLIC DESIGN / Corporate Branding',
+    description: '한국농어촌공사의 농어촌 발전 가치를 담아낸 시각 디자인 및 공공 브랜딩 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1AMSlggrJnP8RsxM_tPCozUyiIEmJPp0Y/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/17nyQAQ9r98I4weofglzQAXx7ax0o98_Z/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1HlytREF82W-6-V-Hc0z6ujmwAlU-IEQr/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/12FrBnMzEIFtyVwykljpYKeGx6kNYNeup/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-center-signage-public-new',
+    number: 'NEW',
+    title: '세종문화회관 사인물',
+    subtitle: 'PUBLIC DESIGN / Wayfinding System',
+    description: '세종문화회관의 공간적 특성을 고려하여 방문객의 편의성과 조형미를 극대화한 통합 사인 시스템 디자인 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/15xTo_QVVdMb6hNaRAlNq3syrzRc5uX8B/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1X8WHS3MJzFJmLPn2hBIM0lWnbqCraVvE/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1slpAE74xDP3i1YZPd7aVC7fTSkHXTsRW/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1yEATKJkwZsEDsCGifuhJnrJKKpfxCCML/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Nh_bvGT4HuchzH7ZDhhAWFNsisc7wvcM/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'fruit-of-love-temperature-column-public-new',
+    number: 'NEW',
+    title: '사랑의열매 온도탑',
+    subtitle: 'PUBLIC DESIGN / Symbolic Installation',
+    description: '나눔의 온도를 시각화하여 기부 문화를 확산시키는 사랑의열매 온도탑 상징 조형물 및 공공 디자인 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1vx1vxtiBL1y7Km0-dJBPIqJJaWv2Wv9t/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1nOCCufmMA1PbpaHoQx5w0oxPIEFace0J/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/11Rp9m7CFPBGH6sjyT2pfCYWwnnzcq1FA/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-arboretum-public-new',
+    number: 'NEW',
+    title: '국립세종수목원',
+    subtitle: 'PUBLIC DESIGN / Environmental Graphics',
+    description: '국립세종수목원의 자연 친화적인 공간 가치를 높이는 공공 시각 디자인 및 환경 그래픽 프로젝트입니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1F2dujqfRSYO414rvIksvoSBfJENAfD8h/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/16tZ7pQon6mYjZt8booUhm9aJQiQ2sEmF/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1SOnZNZvmequ9u5r4INkDGRlETZxh1Y7V/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1_Hi_GP3hXmMarBF_o7ftb_4S69jkR4Tg/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1_J0QOB5qg448li-1DBU8q0IXxPk6D89w/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'nasung-fc-branding-new',
     number: 'NEW',
     title: '나성FC',
