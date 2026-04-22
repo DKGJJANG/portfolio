@@ -60,6 +60,144 @@ const CATEGORIES = [
 // --- Data ---
 const SAMPLE_PROJECTS: Project[] = [
   {
+    id: 'campus-highschool-evacuation-new',
+    number: 'NEW',
+    title: '캠퍼스 고등학교 피난안내도',
+    subtitle: 'VISUAL DESIGN / Information Design',
+    description: '캠퍼스 고등학교 학생들의 안전을 위해 시인성을 높인 맞춤형 피난 안내도 디자인 및 제작 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1ADwcpK-PaZeNP-Jc6DNYFWHQ2tlnZC0F/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1qufPkP9Rf_1YqH7tKzNaynwUvg-4VDjW/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1C0md6astJTnmD5jW_xC-RyRcHokkXiNF/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1T4H4h4Vxq9QIoXGwiJUUrQFBAvZnToSx/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-campus-photozone-new',
+    number: 'NEW',
+    title: '세종공동캠퍼스 포토존',
+    subtitle: 'VISUAL DESIGN / Photo Zone',
+    description: '세종공동캠퍼스 내 방문객들에게 특별한 추억을 선사하는 감각적인 포토존 공간 디자인 및 시각 연출 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1lNPga8BncqZ9RYYYm-MSprM0pDe4VoYp/view?usp=drive_link',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'jongchon-disabled-center-visual-new',
+    number: 'NEW',
+    title: '종촌장애인 보호작업장',
+    subtitle: 'VISUAL DESIGN / Social Welfare',
+    description: '종촌장애인 보호작업장의 따뜻한 가치를 담아낸 시각 디자인 및 홍보물 제작 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1IAcu8G3uaLZjl7lmshqLNbFgkx2EzPhd/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1ISNf1uO_Eb--a-OGhN46sl5vxzPIcMA4/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'saerom-welfare-center-visual-new',
+    number: 'NEW',
+    title: '새롬동 행정복지센터',
+    subtitle: 'VISUAL DESIGN / Public Institution',
+    description: '새롬동 행정복지센터의 공공 서비스 가치를 전달하는 시각 디자인 및 기관 브랜딩 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1970rJCshXiG513sjho5CQjvgOjwPuFHP/view?usp=drive_link',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'gyeongseong-kindergarten-mockup-new',
+    number: 'NEW',
+    title: '경성유치원 목업',
+    subtitle: 'VISUAL DESIGN / Identity Mockup',
+    description: '경성유치원의 브랜드 아이덴티티를 유치원 환경에 자연스럽게 녹여낸 토탈 시각 디자인 및 어플리케이션 목업 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/18-EvNIT_5m69BWb1mdhzqgB80tnY-p9z/view?usp=drive_link',
+    images: [],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'masil-eung-bridge-mockup-new',
+    number: 'NEW',
+    title: '마실가자 이응다리로 행사 목업',
+    subtitle: 'VISUAL DESIGN / Festival Branding',
+    description: '이응다리에서 진행된 마실가자 행사의 통합 브랜딩 및 홍보물 디자인 목업 프로젝트로, 행사의 분위기를 시각적으로 연출했습니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1Ko2iv1DlppPJvwxEx6UDIxrmEJFnpJeE/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1F0XYhGD0BG2dkKhDqS0PsGgqLXZA_OuH/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1CT7pLQslgPr8dpI3myAgZ5c_zUzaY3O-/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1-mn0_Jslyk1CcAbeWqJKzs02AIR7sVnN/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Snt2L3mVxwbH9Rtk9nHoTUBjJepHpvXL/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sodam-general-meeting-mockup-new',
+    number: 'NEW',
+    title: '23년 소담동주민총회 목업',
+    subtitle: 'VISUAL DESIGN / Identity & Mockup',
+    description: '2023년 소담동 주민총회의 브랜드 아이덴티티 시각화 및 주요 홍보물 디자인 목업 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1JeueiYuhikDNwsNZl4cQETaH1kl-cpaA/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1ohLUoPPXq15Me8oTnLdW-5osbVvaUZzX/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/196tnZZo2aigGmpWcsivFtv2Q_bcHjo8D/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1bWThEpzsSwHV-bLmfFqDes07pfKfHju3/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1g_i6uSSmOVhSXtuY3Ia-SVYKYk9D6PrJ/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1s1U8MXncyqkmbGTwTTZBbR7B4LLIjGC7/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'saerom-forest-mockup-new',
+    number: 'NEW',
+    title: '새롬동 상상의숲 행사 목업',
+    subtitle: 'VISUAL DESIGN / Event Mockup',
+    description: '새롬동 행정복지센터 상상의숲에서 진행된 행사의 테마를 시너지 있게 전달하기 위한 시각 디자인 및 현장 연출 목업 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1vCSWZOBmziVX5jYmjEqYYnokfr00RaMy/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/16yPBaiXWnPoeVAXIsgHW1d3DEhKT6_Ko/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1eAUdkXj0F49IjgO3ksu2uhb8KOAVa0fR/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1M_wcVo4YvJwkZm7ud75YRRfxd5iBiQJ9/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'campus-planning-banner-new',
+    number: 'NEW',
+    title: '공동캠퍼스 정책기획관 대형 외벽 현수막',
+    subtitle: 'VISUAL DESIGN / Outdoor Media',
+    description: '공동캠퍼스 정책기획관의 대형 외벽을 활용한 홍보 현수막 디자인으로, 시인성을 극대화한 비주얼 커뮤니케이션 프로젝트입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1nZiH0cvwsLAHZgrBXxdJiImAkB3yBwpB/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1urrJjtMqAc1OzpZVRPNbPrHbtxE2AtIh/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1ymZl1egr3GR5MaccjGYOate9Kxo38Ql_/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1Z0EHmPGvDXVBSuuaTOi-RsVL7Tt2UD1I/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
+    id: 'sejong-campus-visual-new',
+    number: 'NEW',
+    title: '세종공동캠퍼스',
+    subtitle: 'VISUAL DESIGN / Signage & Media',
+    description: '세종공동캠퍼스의 아이덴티티를 강화하는 시각 프로젝트로, 대형 광고물 및 브랜딩 홍보 디자인을 포함한 종합 디자인입니다.',
+    category: '시각디자인',
+    thumbnail: 'https://drive.google.com/file/d/1iJZ1wCZ0XDHRVs5OlkxGETmQjf2aZxRH/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1fKc_PkpG6Umc0EOz6SABicqyZg9waMcp/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/18S8Vp6tYBhKovAewmJKBmSw2Bu-A1rrN/view?usp=drive_link' }
+    ],
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'tipa-interior-new',
     number: 'NEW',
     title: '중소기업기술정보진흥원',
