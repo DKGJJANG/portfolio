@@ -47,6 +47,8 @@ interface Project {
   thumbnail: string;
   images: ProjectImage[];
   createdAt: string;
+  galleryIntro?: string;
+  galleryOutro?: string;
 }
 
 const CATEGORIES = [
@@ -148,16 +150,34 @@ const SAMPLE_PROJECTS: Project[] = [
     createdAt: new Date().toISOString()
   },
   {
+    id: 'plan-to-plan-indoor-signage-public-new',
+    number: 'NEW',
+    title: '플랜투플랜 실내간판',
+    subtitle: 'PUBLIC DESIGN / Indoor Signage',
+    description: '플랜투플랜: 화이트 톤의 깔끔한 인테리어에 맞춰\n입체 간판과 돌출 사인을 미니멀하게 디자인하여\n공간의 분위기를 해치지 않으면서도\n브랜드 아이덴티티를 자연스럽게 표현했습니다.',
+    category: '공공디자인',
+    thumbnail: 'https://drive.google.com/file/d/1YB7WMzRA_YL8fy1vMunAtPQlvf-gK9_d/view?usp=drive_link',
+    images: [
+      { url: 'https://drive.google.com/file/d/1YI8Hvjzhrt9vwVEuIw7ZO2WmFUWzOBDq/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1bX5CwBg-obHwdQ2E4flcCGbGflka-2A3/view?usp=drive_link' },
+      { url: 'https://drive.google.com/file/d/1PqSWBrwZi2SRzg-W7NlhRwdeHXxNQCtV/view?usp=drive_link' }
+    ],
+    galleryOutro: '유리 도어에는 시트 작업으로 시인성을 높이고,\n전체적으로 정돈된 느낌의 사인 구성을 완성했습니다.',
+    createdAt: new Date().toISOString()
+  },
+  {
     id: 'bohun-committee-signage-public-new',
     number: 'NEW',
     title: '보훈심사위원회 채널간판',
     subtitle: 'PUBLIC DESIGN / Building Signage',
-    description: '보훈심사위원회의 권위와 신뢰성을 상징하는 전문적인 채널간판 시스템 디자인 및 설치 프로젝트입니다.',
+    description: '보훈심사위원회: 이번 프로젝트는 보훈심사위원회 건물 외부 채널간판 제작 및 시공을 진행했습니다.\n공공기관의 상징성과 신뢰감을 고려하여 정돈된 디자인과 높은 완성도를 목표로 작업했습니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1Iwmbkvn-f2gcP2bP2n9S-NM7Cvgst47-/view?usp=drive_link',
+    galleryIntro: '외부 고층 간판은 구조 안정성이 중요한 만큼\n견고한 프레임 제작과 안전한 고정 방식을 적용했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1Iwmbkvn-f2gcP2bP2n9S-NM7Cvgst47-/view?usp=drive_link' }
     ],
+    galleryOutro: '풍하중과 외부 환경을 고려해\n장기간 유지될 수 있도록 내구성 중심으로 시공을 진행했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -165,15 +185,17 @@ const SAMPLE_PROJECTS: Project[] = [
     number: 'NEW',
     title: '세종문화예술회관 지주간판/입간판',
     subtitle: 'PUBLIC DESIGN / Signage System',
-    description: '세종문화예술회관의 상징적 조형미와 정보 전달력을 극대화한 통합 지주간판 및 입간판 디자인 프로젝트입니다.',
+    description: '세종문화예술회관 지주간판: 이번 프로젝트는 세종문화예술회관 내 방문객들의 편의성을 높이기 위한\n외부 지주형 안내 간판 제작 및 설치 작업을 진행했습니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1wFFRSNIrTXf338vPZcGmAKcZ-wevNh5E/view?usp=drive_link',
+    galleryIntro: '주차장 안내를 보다 직관적으로 전달하는 것이 핵심이었으며,\n시인성과 내구성을 동시에 고려해 제작했습니다. 외부 안내 간판은 단순한 정보 전달을 넘어\n공간의 첫인상을 결정하는 중요한 요소입니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1jPTS7ecz3lYKmjwWWyougKC98wJaAGL8/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1CuAJbJnYXtD3ls7HfV6w-oZuSrYHVegJ/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1OHduK46Fl6FSQjiwJJNn_aqQudge7ISD/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1wXMyEANz9GhYXmO0BKTPcg4kp9dYZOO2/view?usp=drive_link' }
     ],
+    galleryOutro: '앞으로도 다양한 환경과 목적에 맞는\n맞춤형 간판 제작 및 시공으로 최적의 결과물을 제공하겠습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -181,15 +203,20 @@ const SAMPLE_PROJECTS: Project[] = [
     number: 'NEW',
     title: '대평동 행정복지센터 조형물',
     subtitle: 'PUBLIC DESIGN / Artwork & Sculpture',
-    description: '대평동 행정복지센터의 문화적 가치를 높이고 주민들에게 친근한 공간 경험을 선사하는 예술적 조형물 디자인 및 설치 프로젝트입니다.',
+    description: '대평동 조형물: 이번 프로젝트는 대평동 일대 경관 개선과 공간 활성화를 위한\n조형물 제작 및 설치를 진행했습니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/126kYbUgruGk9HUUOOIAzpfOhss9XpLWN/view?usp=drive_link',
+    galleryIntro: '단순한 구조물이 아닌,\n주민들이 머물고 즐길 수 있는 공간 요소로서의 역할을 중심으로 기획했습니다. 야외 설치 환경을 고려해\n내구성과 안전성을 최우선으로 제작했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1bntIskSAS9iOZcGfqZMqwMPYWfcmcMea/view?usp=drive_link' },
-      { url: 'https://drive.google.com/file/d/1j4vlzddKjs2iTJnT-EgpdDebTjiog7yJ/view?usp=drive_link' },
+      { 
+        url: 'https://drive.google.com/file/d/1j4vlzddKjs2iTJnT-EgpdDebTjiog7yJ/view?usp=drive_link',
+        caption: '모서리 마감과 구조 안정성을 꼼꼼히 확인했으며,\n장기간 사용에도 변형이나 훼손이 없도록 시공을 진행했습니다.'
+      },
       { url: 'https://drive.google.com/file/d/1dnRvRR1UwQ2sW-vXdU-wEJ2qjni6NKnO/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1gESdsivLN9Zrd94qriaVEyVevlF-sWPL/view?usp=drive_link' }
     ],
+    galleryOutro: '또한 현장 동선을 고려해\n보행에 방해되지 않도록 위치와 간격을 세심하게 배치했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -216,13 +243,14 @@ const SAMPLE_PROJECTS: Project[] = [
     number: 'NEW',
     title: '전의면복합커뮤니티센터',
     subtitle: 'PUBLIC DESIGN / Community Branding',
-    description: '전의면복합커뮤니티센터의 주민 친화적 공간 가치를 전달하는 시각 디자인 및 통합 브랜딩 프로젝트입니다.',
+    description: '전의면복합커뮤니티센터: 상부에 설치된 채널간판은 멀리서도 식별이 가능하도록 크기와 간격을 조정했으며,\n기관의 신뢰감을 전달할 수 있도록 깔끔한 서체를 사용했습니다. 고층 외벽에 설치되는 만큼\n구조적 안정성을 최우선으로 시공을 진행했습니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1sQ3RXGlhCkegCufB7s3t063ZmDZdis1U/view?usp=drive_link',
     images: [
       { url: 'https://drive.google.com/file/d/1EWO2xyltrq5XO9Bxh9XU7UlQ9giA7U6H/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/16TWtiNOlFbauvZkr_gOypHmhiN1Hr9MM/view?usp=drive_link' }
     ],
+    galleryOutro: '튼튼한 고정 방식과 내후성이 뛰어난 자재를 사용해\n강풍 및 외부 환경에도 견딜 수 있도록 작업했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -241,33 +269,22 @@ const SAMPLE_PROJECTS: Project[] = [
     createdAt: new Date().toISOString()
   },
   {
-    id: 'sejong-center-signage-public-new',
-    number: 'NEW',
-    title: '세종문화회관 사인물',
-    subtitle: 'PUBLIC DESIGN / Wayfinding System',
-    description: '세종문화회관의 공간적 특성을 고려하여 방문객의 편의성과 조형미를 극대화한 통합 사인 시스템 디자인 프로젝트입니다.',
-    category: '공공디자인',
-    thumbnail: 'https://drive.google.com/file/d/15xTo_QVVdMb6hNaRAlNq3syrzRc5uX8B/view?usp=drive_link',
-    images: [
-      { url: 'https://drive.google.com/file/d/1X8WHS3MJzFJmLPn2hBIM0lWnbqCraVvE/view?usp=drive_link' },
-      { url: 'https://drive.google.com/file/d/1slpAE74xDP3i1YZPd7aVC7fTSkHXTsRW/view?usp=drive_link' },
-      { url: 'https://drive.google.com/file/d/1yEATKJkwZsEDsCGifuhJnrJKKpfxCCML/view?usp=drive_link' },
-      { url: 'https://drive.google.com/file/d/1Nh_bvGT4HuchzH7ZDhhAWFNsisc7wvcM/view?usp=drive_link' }
-    ],
-    createdAt: new Date().toISOString()
-  },
-  {
     id: 'fruit-of-love-temperature-column-public-new',
     number: 'NEW',
     title: '사랑의열매 온도탑',
     subtitle: 'PUBLIC DESIGN / Symbolic Installation',
-    description: '나눔의 온도를 시각화하여 기부 문화를 확산시키는 사랑의열매 온도탑 상징 조형물 및 공공 디자인 프로젝트입니다.',
+    description: '사랑의열매: 연말이 다가오면 거리 곳곳에서 볼 수 있는 ‘사랑의온도탑’은 나눔의 온도를 눈으로 확인할 수 있는 상징적인 구조물입니다.\n이번 프로젝트에서는 사랑의열매 사랑의온도탑 구조물 제작 및 설치를 진행했습니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1vx1vxtiBL1y7Km0-dJBPIqJJaWv2Wv9t/view?usp=drive_link',
+    galleryIntro: '사랑의온도탑은 일정 모금액이 달성될 때마다 온도가 올라가는 형태로, 시민들의 참여를 이끌어내는 중요한 역할을 합니다.\n그만큼 디자인과 구조 안정성, 시인성까지 모두 고려한 제작이 필요합니다. 이번 온도탑은 야외 설치를 고려하여 내구성이 뛰어난 소재를 사용했습니다.\n주요 구조는 견고한 프레임을 기반으로 제작되었으며, 외부 마감은 깔끔한 그래픽 출력물을 적용해 가독성과 전달력을 높였습니다.',
     images: [
-      { url: 'https://drive.google.com/file/d/1nOCCufmMA1PbpaHoQx5w0oxPIEFace0J/view?usp=drive_link' },
+      { 
+        url: 'https://drive.google.com/file/d/1nOCCufmMA1PbpaHoQx5w0oxPIEFace0J/view?usp=drive_link',
+        caption: '특히 온도 표시 구간은 멀리서도 한눈에 보일 수 있도록 컬러 대비와 크기를 충분히 확보해 제작했습니다.\n앞으로도 다양한 공공 캠페인 및 행사 구조물 제작 경험을 바탕으로 완성도 높은 결과물을 제공해드리겠습니다.'
+      },
       { url: 'https://drive.google.com/file/d/11Rp9m7CFPBGH6sjyT2pfCYWwnnzcq1FA/view?usp=drive_link' }
     ],
+    galleryOutro: '사랑의온도탑처럼 의미 있는 프로젝트는\n디자인부터 제작, 설치까지 더욱 정성을 담아 진행하고 있습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -275,15 +292,20 @@ const SAMPLE_PROJECTS: Project[] = [
     number: 'NEW',
     title: '국립세종수목원',
     subtitle: 'PUBLIC DESIGN / Environmental Graphics',
-    description: '국립세종수목원의 자연 친화적인 공간 가치를 높이는 공공 시각 디자인 및 환경 그래픽 프로젝트입니다.',
+    description: '수목원:자연과 사람이 어우러지는 공간,\n국립세종수목원 내 다양한 조형물 제작 및 설치를 진행했습니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1F2dujqfRSYO414rvIksvoSBfJENAfD8h/view?usp=drive_link',
+    galleryIntro: '이번 프로젝트는 단순한 구조물 설치를 넘어\n공간의 분위기와 조화를 이루는 디자인 요소로서의 역할을 중점으로 작업했습니다. 현장 여건을 고려해 동선 방해를 최소화하며 설치를 진행했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/16tZ7pQon6mYjZt8booUhm9aJQiQ2sEmF/view?usp=drive_link' },
-      { url: 'https://drive.google.com/file/d/1SOnZNZvmequ9u5r4INkDGRlETZxh1Y7V/view?usp=drive_link' },
+      { 
+        url: 'https://drive.google.com/file/d/1SOnZNZvmequ9u5r4INkDGRlETZxh1Y7V/view?usp=drive_link',
+        caption: '구조물 고정 및 수평 작업을 꼼꼼히 진행했고,\n잔디 및 주변 시설 훼손 없이 안정적으로 시공을 마무리했습니다.'
+      },
       { url: 'https://drive.google.com/file/d/1_Hi_GP3hXmMarBF_o7ftb_4S69jkR4Tg/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1_J0QOB5qg448li-1DBU8q0IXxPk6D89w/view?usp=drive_link' }
     ],
+    galleryOutro: '각 조형물 간 간격과 시선 흐름까지 고려해\n방문객이 자연스럽게 이동하고 머무를 수 있도록 배치했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -1932,26 +1954,46 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
             />
           </div>
 
+          {/* Gallery Intro */}
+          {project.galleryIntro && (
+            <div className="max-w-2xl mx-auto py-4">
+              <p className="text-sm md:text-base text-brand-green/80 leading-relaxed text-center font-medium whitespace-pre-wrap">
+                {project.galleryIntro}
+              </p>
+            </div>
+          )}
+
           {/* Gallery */}
           {project.images && project.images.length > 0 && (
             <div className="grid grid-cols-1 gap-12">
               {project.images.map((imgObj, idx) => (
-                <div key={idx} className="space-y-4">
-                  <div className="w-full rounded-sm overflow-hidden bg-gray-50">
-                    <img 
-                      src={getDirectImageUrl(typeof imgObj === 'string' ? imgObj : imgObj.url)} 
-                      alt={`${project.title} gallery ${idx + 1}`} 
-                      className="w-full h-full object-cover"
-                      referrerPolicy="no-referrer"
-                    />
+                <React.Fragment key={idx}>
+                  <div className="space-y-4">
+                    <div className="w-full rounded-sm overflow-hidden bg-gray-50">
+                      <img 
+                        src={getDirectImageUrl(typeof imgObj === 'string' ? imgObj : imgObj.url)} 
+                        alt={`${project.title} gallery ${idx + 1}`} 
+                        className="w-full h-full object-cover"
+                        referrerPolicy="no-referrer"
+                      />
+                    </div>
+                    {typeof imgObj !== 'string' && imgObj.caption && (
+                      <p className="text-center text-xs md:text-sm text-brand-green/60 font-medium tracking-tight whitespace-pre-wrap">
+                        {imgObj.caption}
+                      </p>
+                    )}
                   </div>
-                  {typeof imgObj !== 'string' && imgObj.caption && (
-                    <p className="text-center text-xs md:text-sm text-brand-green/60 font-medium tracking-tight">
-                      {imgObj.caption}
-                    </p>
-                  )}
-                </div>
+                </React.Fragment>
               ))}
+            </div>
+          )}
+
+          {/* Gallery Outro */}
+          {project.galleryOutro && (
+            <div className="max-w-2xl mx-auto py-4 border-t border-gray-100 pt-12">
+              <p className="text-sm md:text-base text-brand-green/80 leading-relaxed text-center font-medium whitespace-pre-wrap">
+                {project.galleryOutro}
+              </p>
             </div>
           )}
         </div>
@@ -2079,6 +2121,8 @@ const ProjectFormModal = ({
     description: '',
     category: CATEGORIES[0],
     thumbnail: '',
+    galleryIntro: '',
+    galleryOutro: '',
     images: [] as { url: string; caption?: string }[]
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -2091,10 +2135,21 @@ const ProjectFormModal = ({
         description: editingProject.description || '',
         category: editingProject.category || CATEGORIES[0],
         thumbnail: editingProject.thumbnail || '',
+        galleryIntro: editingProject.galleryIntro || '',
+        galleryOutro: editingProject.galleryOutro || '',
         images: editingProject.images || []
       });
     } else {
-      setFormData({ title: '', subtitle: '', description: '', category: CATEGORIES[0], thumbnail: '', images: [] });
+      setFormData({ 
+        title: '', 
+        subtitle: '', 
+        description: '', 
+        category: CATEGORIES[0], 
+        thumbnail: '', 
+        galleryIntro: '', 
+        galleryOutro: '', 
+        images: [] 
+      });
     }
   }, [editingProject, isOpen]);
 
@@ -2123,13 +2178,7 @@ const ProjectFormModal = ({
   };
 
   const addImageField = () => {
-    setFormData(prev => ({ ...prev, images: [...prev.images, { url: '' }] }));
-  };
-
-  const updateImageField = (index: number, value: string) => {
-    const newImages = [...formData.images];
-    newImages[index].url = value;
-    setFormData(prev => ({ ...prev, images: newImages }));
+    setFormData(prev => ({ ...prev, images: [...prev.images, { url: '', caption: '' }] }));
   };
 
   return (
@@ -2139,7 +2188,7 @@ const ProjectFormModal = ({
     >
       <motion.div 
         initial={{ scale: 0.9 }} animate={{ scale: 1 }}
-        className="bg-white w-full max-w-2xl max-h-[90vh] overflow-y-auto rounded-sm p-8"
+        className="bg-white w-full max-w-4xl max-h-[90vh] overflow-y-auto rounded-sm p-8"
       >
         <div className="flex justify-between items-center mb-8 border-b pb-4">
           <h2 className="text-2xl font-display font-bold">
@@ -2164,61 +2213,125 @@ const ProjectFormModal = ({
               <input required className="w-full p-3 border border-gray-100 rounded-sm" value={formData.title} onChange={e => setFormData({...formData, title: e.target.value})} />
             </div>
           </div>
-          <div className="space-y-2">
-            <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">부제목 (예: PUBLIC DESIGN / Signage)</label>
-            <input required className="w-full p-3 border border-gray-100 rounded-sm" value={formData.subtitle} onChange={e => setFormData({...formData, subtitle: e.target.value})} />
-          </div>
-          <div className="space-y-2">
-            <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">설명</label>
-            <textarea className="w-full p-3 border border-gray-100 rounded-sm h-32" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
-          </div>
-          <FileUploadZone 
-            label="썸네일 이미지" 
-            value={formData.thumbnail}
-            onUpload={(url) => setFormData(prev => ({...prev, thumbnail: url}))} 
-          />
-          
-          <div className="space-y-4">
-            <div className="flex justify-between items-center">
-              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">추가 상세 이미지 (Gallery)</label>
-              <button type="button" onClick={addImageField} className="text-[10px] font-bold bg-gray-100 px-3 py-1 rounded-sm hover:bg-gray-200 uppercase tracking-widest">이미지 공간 추가</button>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">부제목 (예: PUBLIC DESIGN / Signage)</label>
+              <input required className="w-full p-3 border border-gray-100 rounded-sm" value={formData.subtitle} onChange={e => setFormData({...formData, subtitle: e.target.value})} />
             </div>
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              {/* Always show at least 2 empty fields if no images exist */}
-              {(formData.images.length === 0 ? [{url: ''}, {url: ''}] : formData.images).map((img, idx) => (
-                <div key={idx} className="relative group">
-                  <FileUploadZone 
-                    label={`상세 이미지 ${idx + 1}`} 
-                    value={img.url}
-                    onUpload={(url) => {
-                      let newImages = [...formData.images];
-                      // If we are using the fallback/placeholder array, we need to initialize properly
-                      if (formData.images.length === 0) {
-                        newImages = idx === 0 ? [{url}, {url: ''}] : [{url: ''}, {url}];
-                      } else {
-                        newImages[idx] = { ...newImages[idx], url };
-                      }
-                      setFormData(prev => ({ ...prev, images: newImages }));
-                    }} 
-                  />
-                  {formData.images.length > 0 && (
-                    <button 
-                      type="button" 
-                      onClick={() => setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== idx) }))} 
-                      className="absolute top-0 right-0 p-2 text-red-500 hover:bg-red-50 rounded-sm transition-colors"
-                    >
-                      <Trash2 size={16}/>
-                    </button>
-                  )}
-                </div>
-              ))}
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">게시물 번호 (예: 01, NEW)</label>
+              <input className="w-full p-3 border border-gray-100 rounded-sm font-mono" value={editingProject?.number || 'NEW'} disabled />
+            </div>
+          </div>
+          
+          <div className="space-y-2">
+            <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">간략 설명 (메인 노출용)</label>
+            <textarea className="w-full p-3 border border-gray-100 rounded-sm h-24" value={formData.description} onChange={e => setFormData({...formData, description: e.target.value})} />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">갤러리 리드 텍스트 (Intro)</label>
+              <textarea className="w-full p-3 border border-gray-100 rounded-sm h-24" value={formData.galleryIntro} onChange={e => setFormData({...formData, galleryIntro: e.target.value})} placeholder="이미지 상단에 노출될 설명입니다." />
+            </div>
+            <div className="space-y-2">
+              <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">갤러리 마무리 텍스트 (Outro)</label>
+              <textarea className="w-full p-3 border border-gray-100 rounded-sm h-24" value={formData.galleryOutro} onChange={e => setFormData({...formData, galleryOutro: e.target.value})} placeholder="이미지 하단에 노출될 마무리 문구입니다." />
             </div>
           </div>
 
-          <div className="flex gap-4 pt-6 mt-8 border-t">
-            <button type="button" onClick={onClose} className="flex-1 py-4 border border-gray-200 font-bold uppercase tracking-widest text-[10px] hover:bg-gray-50">취소</button>
-            <button disabled={isSubmitting} type="submit" className="flex-1 py-4 bg-brand-green text-white font-bold uppercase tracking-widest text-[10px] hover:opacity-90 disabled:opacity-50">
-              {isSubmitting ? '저장 중...' : (editingProject ? '수정 사항 저장' : '프로젝트 저장')}
+          <div className="space-y-4 border-t pt-6">
+            <h3 className="text-sm font-bold uppercase tracking-widest">대표 이미지 (Thumbnail)</h3>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 items-end">
+              <FileUploadZone 
+                label="대표 이미지 업로드" 
+                value={formData.thumbnail}
+                onUpload={(url) => setFormData(prev => ({...prev, thumbnail: url}))} 
+              />
+              <div className="space-y-2">
+                <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">또는 Google Drive 이미지 URL 입력</label>
+                <input 
+                  className="w-full p-3 border border-gray-100 rounded-sm" 
+                  value={formData.thumbnail} 
+                  onChange={e => setFormData({...formData, thumbnail: e.target.value})}
+                  placeholder="https://drive.google.com/file/d/..."
+                />
+              </div>
+            </div>
+          </div>
+          
+          <div className="space-y-6 border-t pt-6">
+            <div className="flex justify-between items-center">
+              <h3 className="text-sm font-bold uppercase tracking-widest">추가 이미지 구성</h3>
+              <button type="button" onClick={addImageField} className="text-[10px] font-bold bg-brand-green text-white px-4 py-2 rounded-sm hover:opacity-90 uppercase tracking-widest flex items-center gap-2">
+                <Plus size={14} /> 추가 이미지 추가
+              </button>
+            </div>
+
+            <div className="space-y-8">
+              {formData.images.map((img, idx) => (
+                <div key={idx} className="relative p-6 border border-gray-100 rounded-sm bg-gray-50/30">
+                  <button 
+                    type="button" 
+                    onClick={() => setFormData(prev => ({ ...prev, images: prev.images.filter((_, i) => i !== idx) }))} 
+                    className="absolute -top-3 -right-3 p-2 bg-white text-red-500 hover:bg-red-50 rounded-full shadow-sm border border-gray-100 transition-colors z-10"
+                  >
+                    <Trash2 size={16}/>
+                  </button>
+                  
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <div className="space-y-4">
+                      <FileUploadZone 
+                        label={`추가 이미지 ${idx + 1}`} 
+                        value={img.url}
+                        onUpload={(url) => {
+                          const newImages = [...formData.images];
+                          newImages[idx] = { ...newImages[idx], url };
+                          setFormData(prev => ({ ...prev, images: newImages }));
+                        }} 
+                      />
+                      <div className="space-y-1">
+                        <label className="text-[9px] font-bold uppercase tracking-widest opacity-40">Google Drive URL</label>
+                        <input 
+                          className="w-full p-2 text-xs border border-gray-100 rounded-sm font-mono" 
+                          value={img.url} 
+                          onChange={e => {
+                            const newImages = [...formData.images];
+                            newImages[idx] = { ...newImages[idx], url: e.target.value };
+                            setFormData(prev => ({ ...prev, images: newImages }));
+                          }}
+                          placeholder="Drive URL 직접 입력"
+                        />
+                      </div>
+                    </div>
+                    <div className="space-y-2">
+                      <label className="text-[10px] font-bold uppercase tracking-widest opacity-40">이미지 하단 설명 (Caption)</label>
+                      <textarea 
+                        className="w-full p-3 border border-gray-100 rounded-sm h-[137px]" 
+                        value={img.caption || ''} 
+                        onChange={e => {
+                          const newImages = [...formData.images];
+                          newImages[idx] = { ...newImages[idx], caption: e.target.value };
+                          setFormData(prev => ({ ...prev, images: newImages }));
+                        }} 
+                        placeholder="이미지 하단에 노출될 개별 설명입니다."
+                      />
+                    </div>
+                  </div>
+                </div>
+              ))}
+              {formData.images.length === 0 && (
+                <div className="text-center py-10 border-2 border-dashed border-gray-100 rounded-sm">
+                  <p className="text-[10px] font-bold uppercase tracking-widest opacity-30 italic">추가 이미지가 없습니다. 상단 '추가 이미지 추가' 버튼을 눌러주세요.</p>
+                </div>
+              )}
+            </div>
+          </div>
+
+          <div className="flex gap-4 pt-10 border-t items-center">
+            <button type="button" onClick={onClose} className="px-8 py-4 border border-gray-200 font-bold uppercase tracking-widest text-[10px] hover:bg-gray-50">취소</button>
+            <button disabled={isSubmitting} type="submit" className="flex-1 py-4 bg-brand-green text-white font-bold uppercase tracking-widest text-xs hover:opacity-95 shadow-xl disabled:opacity-50 transition-all">
+              {isSubmitting ? '데이터 처리 중...' : (editingProject ? '프로젝트 정보 수정하기' : '새로운 프로젝트 게시하기')}
             </button>
           </div>
         </form>
@@ -2602,7 +2715,7 @@ export default function App() {
           {/* Bottom Bar */}
           <div className="mt-20 pt-10 border-t border-white/10 flex flex-col md:flex-row justify-between items-center gap-6">
             <p className="text-[9px] tracking-widest uppercase opacity-30">
-              © 2024 DABIN GROUP. ALL RIGHTS RESERVED.
+              © 2024 <span className="cursor-pointer hover:opacity-100" onClick={handleFooterClick}>DABIN GROUP</span>. ALL RIGHTS RESERVED.
             </p>
           </div>
         </div>
