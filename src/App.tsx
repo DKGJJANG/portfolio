@@ -47,10 +47,12 @@ const SAMPLE_PROJECTS: Project[] = [
     description: '세종공동캠퍼스의 개교와 비전을 홍보하기 위해 대형 외벽 공간을 활용한 임팩트 있는 비주얼 메시지 및 현수막 디자인 프로젝트입니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1K7IQjvhVstr-JE2sQu7L3OyUB3U0in4O/view?usp=drive_link',
+    galleryIntro: '세종공동캠퍼스 외벽현수막 및 포토존: 세종공동캠퍼스 현장에\n외벽 현수막과 포토존 제작 및 설치를 진행했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1z1SdCrOlWGscIT_bwAUvrDeROmaQgKUy/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1_08JROEVopNMcZYQ1vNdt3jLSRPFULAP/view?usp=drive_link' }
     ],
+    galleryOutro: '외벽 현수막은 멀리서도 잘 보일 수 있도록\n대형 사이즈와 높은 가독성 중심으로 제작했으며,\n포토존은 공간의 분위기를 살리면서\n방문객들이 자연스럽게 사진을 남길 수 있도록 구성했습니다.\n\n현장 환경과 동선을 고려한 시공으로\n완성도 높은 결과물을 마무리했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -61,12 +63,14 @@ const SAMPLE_PROJECTS: Project[] = [
     description: '캠퍼스고등학교 학생들의 안전한 대피 환경을 조성하기 위해 시인성과 가독성을 최적화한 통합 피난안내도 디자인 프로젝트입니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1XTftU_wf9DTac-2adMEwT_8nBWu5sS_K/view?usp=drive_link',
+    galleryIntro: '캠퍼스고등학교 피난안내도:  캠퍼스고등학교 내 피난안내도 제작 및 설치를 진행했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1UbYwlZqqa7IQ7LMB44w1JnYOQh_YeIM4/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1sajxzwI28YSQg7SjW3JX9AjR4Q8lmM_0/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1etk00D6ftRHBfRHW9BCEL1Rsv9EWPDhC/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1aUdQO9YKW2NJKWofwA4KUGH3QnLySDtu/view?usp=drive_link' }
     ],
+    galleryOutro: '학생과 교직원의 안전을 최우선으로 고려하여\n누구나 쉽게 이해할 수 있도록 가독성 높은 디자인으로 제작했으며,\n비상 시 신속한 대피가 가능하도록 위치와 동선을 반영했습니다.\n\n내구성 있는 소재와 깔끔한 마감으로\n안전성과 완성도를 동시에 높인 시공을 완료했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -77,10 +81,12 @@ const SAMPLE_PROJECTS: Project[] = [
     description: '세종도시교통공사의 위상과 상쾌한 도시 이미지를 결합한 현대적인 국기게양대 공공 시설물 디자인 및 설치 프로젝트입니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1GZCwVGobubmSTomQ1URYmw_llfC_ZQYD/view?usp=drive_link',
+    galleryIntro: '세종도시교통공사 국기게양대: \n세종도시교통공사 현장에\n국기게양대 제작 및 설치를 진행했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1OUQFfwQY6yiYmimlKRaRLnCiVmka6kc8/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1_Pb1B0ftxIToVu5-W-SV-ksK2mwjyjuo/view?usp=drive_link' }
     ],
+    galleryOutro: '외부 환경에 적합한 내구성 높은 소재를 사용하여\n장기간 안정적으로 사용할 수 있도록 시공했으며,\n견고한 기초 작업을 통해 안전성을 확보했습니다.\n\n공공기관에 어울리는 깔끔한 마감으로\n현장의 품격을 높이는 국기게양대를 완성했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -91,12 +97,14 @@ const SAMPLE_PROJECTS: Project[] = [
     description: "세종시 공영자전거 '어울링' 대여소의 시인성과 사용성을 높이기 위한 통합 공공 시각 디자인 및 시설물 브랜딩 프로젝트입니다.",
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1eDC9JDtsnAo_GnGgeHt0ArxoheEFtgh8/view?usp=drive_link',
+    galleryIntro: '세종도시교통공사 어울링 대여소:  세종도시교통공사 어울링 자전거 대여소 제작 및 설치를 진행했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1OEuABrPkJuIWhh-D-SmxvMYZ4q6Jh_lN/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1djom6q-2Tn2tZBn6oNAe8K6VosEud8ds/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1Su5p_a9NbOkNCMtlbaId1u7M3fzQX87k/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1LlhWAyyLoI03M1o-j1GQeySuKfH6bP5t/view?usp=drive_link' }
     ],
+    galleryOutro: '외부 환경에 적합한 견고한 구조로 제작하여\n내구성과 안전성을 높였으며,\n이용자들이 쉽게 인식할 수 있도록\n가독성 중심의 디자인으로 마감했습니다.\n\n현장 동선과 접근성을 고려해\n편리한 이용이 가능하도록 설치를 완료했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -107,11 +115,13 @@ const SAMPLE_PROJECTS: Project[] = [
     description: '연동면사무소의 행정 정보를 주민들에게 효율적으로 전달하기 위해 설계된 기능적이고 미학적인 공공 게시판 디자인 및 설치 프로젝트입니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/19CsA270K1xGYtbjFurle0-g4yI3T_YH_/view?usp=drive_link',
+    galleryIntro: '연동면 스텐 지주 게시판: 외부 환경에 노출되는 제품인 만큼\n부식에 강한 스테인리스 소재를 사용하여 내구성을 높였고,\n장기간 사용에도 변형 없이 유지될 수 있도록 제작했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/10z2_i6P9HtS2Mpc9eiGbAC-K3vm3ivN0/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1_DxCX9HotyxE_nJq9ePwHOsBmY-mZ5Za/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1kQiZScdWUOhzc74dBYtfMk_o78IaDGYM/view?usp=drive_link' }
     ],
+    galleryOutro: '지주 구조는 안정성을 고려해 견고하게 시공하였으며,\n가독성이 좋은 게시판 면 구성으로 정보 전달력을 강화했습니다.\n\n현장 환경과 동선을 고려한 위치 선정으로\n이용자들이 쉽게 확인할 수 있도록 설치를 마무리했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -122,9 +132,11 @@ const SAMPLE_PROJECTS: Project[] = [
     description: '이엔코퍼레이션의 기업 이미지를 강화하고 공간의 전문성을 높이는 통합 후렉스 간판 및 지주간판 디자인 프로젝트입니다.',
     category: '브랜딩디자인',
     thumbnail: 'https://drive.google.com/file/d/1oQ3r_Y0G90WOAKoMQXze4T3gTuu7jqtU/view?usp=drive_link',
+    galleryIntro: '이엔코퍼레이션_후렉스간판지주간판: 지주형 돌출간판 제작 및 설치를 진행했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/1YzVTTqruAmKJL2LnpRZweUMyYjwo5ca8/view?usp=drive_link' }
     ],
+    galleryOutro: '보행자와 차량 모두에서 잘 보일 수 있도록\n돌출형 구조로 시인성을 높였으며,\n견고한 지주 프레임으로 안정성을 확보했습니다.\n\n외부 환경에 강한 내구성 중심의 시공으로\n완성도 높은 간판 설치를 마무리했습니다.',
     createdAt: new Date().toISOString()
   },
   {
@@ -239,11 +251,13 @@ const SAMPLE_PROJECTS: Project[] = [
     description: '한국농어촌공사의 농어촌 발전 가치를 담아낸 시각 디자인 및 공공 브랜딩 프로젝트입니다.',
     category: '공공디자인',
     thumbnail: 'https://drive.google.com/file/d/1AMSlggrJnP8RsxM_tPCozUyiIEmJPp0Y/view?usp=drive_link',
+    galleryIntro: '농어촌공사 간판: 외부 채널 간판 특성상 내구성이 중요한 만큼\n견고한 구조로 제작하고 안정적인 고정 방식을 적용했습니다.',
     images: [
       { url: 'https://drive.google.com/file/d/17nyQAQ9r98I4weofglzQAXx7ax0o98_Z/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/1HlytREF82W-6-V-Hc0z6ujmwAlU-IEQr/view?usp=drive_link' },
       { url: 'https://drive.google.com/file/d/12FrBnMzEIFtyVwykljpYKeGx6kNYNeup/view?usp=drive_link' }
     ],
+    galleryOutro: '기상 변화에도 변형이나 탈락 없이 유지될 수 있도록\n세심하게 시공을 진행했습니다. 외부 간판은 단순한 표지판이 아닌\n기관의 이미지를 보여주는 중요한 요소입니다.\n\n앞으로도 공간과 목적에 맞는 최적의 간판 제작 및 시공으로\n완성도 높은 결과물을 제공하겠습니다',
     createdAt: new Date().toISOString()
   },
   {
@@ -1044,11 +1058,11 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
               <h2 className="text-3xl md:text-5xl font-display font-bold tracking-tight text-brand-green break-keep">
                 {project.title}
               </h2>
-              <p className="mt-4 text-sm md:text-base text-brand-green/60 max-w-xl leading-relaxed font-bold">
+              <p className="mt-4 text-sm md:text-base text-brand-green/60 max-w-xl leading-relaxed font-bold break-keep">
                 {project.subtitle}
               </p>
               {project.description && (
-                <p className="mt-2 text-xs md:text-sm text-brand-green/50 max-w-xl leading-relaxed italic">
+                <p className="mt-2 text-xs md:text-sm text-brand-green/50 max-w-xl leading-relaxed italic break-keep">
                   {project.description}
                 </p>
               )}
@@ -1074,7 +1088,7 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
           {/* Gallery Intro */}
           {project.galleryIntro && (
             <div className="max-w-2xl mx-auto py-4">
-              <p className="text-sm md:text-base text-brand-green/80 leading-relaxed text-center font-medium whitespace-pre-wrap">
+              <p className="text-sm md:text-base text-brand-green/80 leading-relaxed text-center font-medium whitespace-pre-wrap break-keep">
                 {project.galleryIntro}
               </p>
             </div>
@@ -1095,7 +1109,7 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
                       />
                     </div>
                     {imgObj.caption && (
-                      <p className="text-center text-xs md:text-sm text-brand-green/60 font-medium tracking-tight whitespace-pre-wrap">
+                      <p className="text-center text-xs md:text-sm text-brand-green/60 font-medium tracking-tight whitespace-pre-wrap break-keep">
                         {imgObj.caption}
                       </p>
                     )}
@@ -1108,7 +1122,7 @@ const ProjectDetailModal = ({ project, onClose }: { project: Project; onClose: (
           {/* Gallery Outro */}
           {project.galleryOutro && (
             <div className="max-w-2xl mx-auto py-4 border-t border-gray-100 pt-12">
-              <p className="text-sm md:text-base text-brand-green/80 leading-relaxed text-center font-medium whitespace-pre-wrap">
+              <p className="text-sm md:text-base text-brand-green/80 leading-relaxed text-center font-medium whitespace-pre-wrap break-keep">
                 {project.galleryOutro}
               </p>
             </div>
