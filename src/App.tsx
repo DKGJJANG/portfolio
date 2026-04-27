@@ -1205,12 +1205,12 @@ export default function App() {
                   <div className="w-12 h-12 rounded-full border border-brand-green/20 flex items-center justify-center group-hover:bg-brand-green group-hover:text-white transition-all">
                     <ArrowUpRight className="w-6 h-6 rotate-[225deg]" />
                   </div>
-                  BACK TO PORTFOLIO
+                  BACK TO 작업물
                 </motion.button>
               )}
             </div>
             <h1 className="text-[21px] md:text-[4.2vw] font-display font-black leading-[0.85] tracking-tighter uppercase mb-2 relative inline-block break-keep">
-              {selectedCategory || 'PORTFOLIO'}
+              {selectedCategory || '작업물'}
               <motion.div 
                 className="absolute -bottom-4 left-0 h-[2px] bg-[#D4AF37]"
                 initial={{ width: 0 }}
